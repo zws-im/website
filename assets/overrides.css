@@ -10,10 +10,11 @@ body button.button__accent {
   background-color: #121212;
   border-color: #121212;
 }
+
 @media (min-width: 992px) {
   body button.button__accent:hover {
-    background-color: #333333;
-    border-color: #333333;
+    background-color: #333;
+    border-color: #333;
   }
 }
 
@@ -45,29 +46,10 @@ body {
 
 body > main {
   flex-grow: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   padding-top: 60px;
-}
-
-body > main .auth__title {
-  margin-top: 1.5rem;
-}
-
-body > main div.auth__inner {
-  min-height: 0px;
-  margin-top: 0px !important;
-}
-
-body > main div.auth__inner form {
-  margin-bottom: 0px;
-}
-
-body > main div.auth__inner form button {
-  margin-bottom: 0px;
 }
 
 @media (max-width: 992px) {
