@@ -21,14 +21,18 @@ export default () => {
 
   return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`)
     .then(async response => {
-      const json = await response.json();
-      if (json.error) {
-        throw json.error;
-      } else if (!(200 <= response.status && response.status <= 299)) {
-        throw `${response.status} ${response.statusText} and said ${await response.json()}`;
-      }
+      if (response.status === 404) {
+        return result.innerText ="That URL couldn't be found or you don't have access to it";
+      } else {
+        const json = await response.json();
+        if (json.error) {
+          throw json.error;
+        } else if (!(200 <= response.status && response.status <= 299)) {
+          throw `${response.status} ${response.statusText} and said ${await response.json()}`;
+        }
 
-      return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
+        return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
+      }
     })
     .catch(error => {
       console.error(error);
