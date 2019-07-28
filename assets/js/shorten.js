@@ -18,7 +18,7 @@ export default () => {
 
   try {
     ga("send", "event", "URLs", "shorten");
-  } catch(error) {
+  } catch (error) {
     console.error("Error sending statistics to Google Analytics", error);
   }
 
