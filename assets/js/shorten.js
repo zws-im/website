@@ -1,4 +1,4 @@
-/* global ga */
+/* global gtag */
 import { apiURL, hostnames } from "/assets/js/constants.js";
 import copy from "/assets/js/copy.js";
 
@@ -17,7 +17,8 @@ export default () => {
   result.innerText = "Shortening…";
 
   try {
-    ga("send", "event", "URLs", "shorten");
+    // eslint-disable-next-line camelcase
+    gtag("event", "shorten", { event_category: "URLs" });
   } catch (error) {
     console.error("Error sending statistics to Google Analytics", error);
   }

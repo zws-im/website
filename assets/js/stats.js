@@ -1,4 +1,4 @@
-/* global ga */
+/* global gtag */
 
 import { apiURL, hostnames } from "/assets/js/constants.js";
 
@@ -17,12 +17,17 @@ export default () => {
 
   result.innerText = "Loading...";
 
-  ga ? ga("send", "event", "URLs", "stats") : console.error("Unable to log URL stats event to Google Analytics");
+  try {
+    // eslint-disable-next-line camelcase
+    gtag("event", "checkStats", { event_category: "URLs" });
+  } catch (error) {
+    console.error("Unable to log URL stats event to Google Analytics");
+  }
 
   return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`)
     .then(async response => {
       if (response.status === 404) {
-        return result.innerText ="That URL couldn't be found or you don't have access to it";
+        return (result.innerText = "That URL couldn't be found or you don't have access to it");
       } else {
         const json = await response.json();
         if (json.error) {
