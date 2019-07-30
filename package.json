@@ -4,7 +4,6 @@
     "url": "https://github.com/zws-im/zws/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
     "@dice-discord/eslint-config": "^3.0.0",
     "ejs": "^2.6.2",
     "eslint": "^6.0.0",
@@ -25,11 +24,10 @@
     "url": "git+https://github.com/zws-im/zws.git"
   },
   "scripts": {
-    "build": "npm run prebuild && eleventy",
+    "build": "harp compile src build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prebuild": "rm -rf build",
-    "serve": "npm run prebuild && eleventy --serve"
+    "serve": "harp server src"
   },
   "version": "1.10.9"
 }

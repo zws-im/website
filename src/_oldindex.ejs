@@ -1,12 +1,8 @@
----
-permalink: "/index.html"
----
-
 <!doctype html>
 <html lang="en" dir="ltr">
 
 <head>
-  <%- include("blocks/head.ejs") %>
+  <%- include("_partials/head.ejs") %>
 
   <script type="module">
     import shorten from "/assets/js/shorten.js"
@@ -16,7 +12,7 @@ permalink: "/index.html"
 </head>
 
 <body>
-  <%- include("blocks/navbar.ejs") %>
+  <%- include("_partials/navbar.ejs") %>
 
   <main>
     <div class="container">
@@ -37,9 +33,9 @@ permalink: "/index.html"
     </div>
   </main>
 
-  <%- include("blocks/footer.ejs") %>
+  <%- include("_partials/footer.ejs") %>
 
-  <%- include("blocks/scripts.ejs") %>
+  <%- include("_partials/scripts.ejs") %>
 </body>
 
 </html>
