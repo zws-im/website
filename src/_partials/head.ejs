@@ -19,6 +19,19 @@
   })('https://www.gstatic.com/firebasejs/6.0.2/firebase-performance-standalone.js', firebaseConfig);
 </script>
 
+<!-- Register service worker and Workbox -->
+<script>
+if ("serviceWorker" in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener("load", async () => {
+    await navigator.serviceWorker
+      .register("/sw.js", { scope: "./" });
+
+  console.log("Service worker registered");
+  });
+}
+</script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133415948-3"></script>
 <script>

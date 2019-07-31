@@ -1,40 +1,70 @@
-const scripts = ["constants.js", "copy.js", "registerServiceWorker.js", "shorten.js", "stats.js"].map(
-  fileName => `/assets/js/${fileName}`
-);
-const styles = ["overrides.css"].map(fileName => `/assets/${fileName}`);
-const images = [
-  "logo-512.png",
-  "logo-type.png",
-  "undraw_browser_stats.svg",
-  "undraw_page_not_found.svg",
-  "undraw_portfolio.svg"
-].map(fileName => `/assets/image/${fileName}`);
+/* global importScripts workbox */
 
-const pages = ["index", "404", "stats"].map(fileName => `/${fileName}`);
-pages.push("./");
+import workbox from "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js";
 
-const toCache = [...images, ...pages, ...scripts, ...styles];
+if (workbox) {
+  console.log("Workbox loaded");
 
-// Here comes the install event! This only happens once, when the browser sees this version of the ServiceWorker for the first time.
-self.addEventListener("install", event => {
-  // We pass a promise to event.waitUntil to signal how long install takes, and if it failed
-  event.waitUntil(
-    // We open a cache…
-    caches.open("zws").then(cache =>
-      // And add resources to it
-      cache.addAll(toCache).catch(console.error)
-    )
-  );
-});
-
-// The fetch event happens for the page request with the ServiceWorker's scope, and any request made within that page
-self.addEventListener("fetch", function(event) {
-  // Calling event.respondWith means we're in charge of providing the response. We pass in a promise that resolves with a response object
-  event.respondWith(
-    // First we look for something in the caches that matches the request
-    caches.match(event.request).then(function(response) {
-      // If we get something, we return it, otherwise it's null, and we'll pass the request to fetch, which will use the network.
-      return response || fetch(event.request);
+  // Static files
+  workbox.routing.registerRoute(
+    /\/assets\//,
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: "static-resources"
     })
   );
-});
+
+  // Pages that are HTML but don't have the `.html` file extension (ex. https://zws.im/stats)
+  workbox.routing.registerRoute(
+    ({ event }) => event.request.destination === "document",
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: "pages"
+    })
+  );
+
+  // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
+  workbox.routing.registerRoute(
+    /^https:\/\/fonts\.googleapis\.com/,
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: "google-fonts-stylesheets"
+    })
+  );
+
+  // Cache the underlying font files with a cache-first strategy for 1 year.
+  workbox.routing.registerRoute(
+    /^https:\/\/fonts\.gstatic\.com/,
+    new workbox.strategies.CacheFirst({
+      cacheName: "google-fonts-webfonts",
+      plugins: [
+        new workbox.cacheableResponse.Plugin({
+          statuses: [0, 200]
+        }),
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: 60 * 60 * 24 * 365,
+          maxEntries: 30
+        })
+      ]
+    })
+  );
+
+  // Cache image files
+  workbox.routing.registerRoute(
+    /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
+    new workbox.strategies.CacheFirst({
+      cacheName: "images",
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+        })
+      ]
+    })
+  );
+
+  workbox.routing.setDefaultHandler(
+    new workbox.strategies.StaleWhileRevalidate()
+  );
+
+  workbox.googleAnalytics.initialize();
+} else {
+  console.error("Workbox didn't load");
+}
