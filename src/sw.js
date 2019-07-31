@@ -2,6 +2,9 @@
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
+// Delete the old cache
+caches.delete("zws");
+
 if (workbox) {
   console.log("Workbox loaded");
 
