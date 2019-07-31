@@ -52,6 +52,32 @@ body > main {
   padding-top: 60px;
 }
 
+
+body > main .auth__title {
+  margin-top: 1.5rem;
+}
+
+body > main div.auth__media {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+body > main div.auth__inner {
+  min-height: 0px;
+  margin-top: 0px !important;
+}
+
+body > main div.auth__inner form {
+  margin-bottom: 0px;
+}
+
+body > main div.auth__inner form button {
+  margin-bottom: 0px;
+}
+
+
 @media (max-width: 992px) {
   body > main div.auth__auth {
     width: 100%;
