@@ -70,7 +70,7 @@ body > main div.auth__inner {
 }
 
 body > main div.auth__inner form {
-  margin-bottom: 0px;
+  margin-bottom: 5%;
 }
 
 body > main div.auth__inner form button {
