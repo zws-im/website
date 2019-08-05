@@ -7,21 +7,46 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 caches.delete("zws");
 
 if (workbox) {
-  console.log("Workbox loaded");
+  console.log("Workbox is loaded");
 
-  // Static files
+  const yearInSeconds = 60 * 60 * 24 * 365;
+
+  // Cache pages
   workbox.routing.registerRoute(
-    /\/assets\//,
-    new workbox.strategies.StaleWhileRevalidate({
-      cacheName: "static-resources"
+    ({ event }) => event.request.destination === "document",
+    new workbox.strategies.NetworkFirst({
+      cacheName: "pages",
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: yearInSeconds
+        })
+      ]
     })
   );
 
-  // Pages that are HTML but don't have the `.html` file extension (ex. https://zws.im/stats)
+  // Cache CSS
   workbox.routing.registerRoute(
-    ({ event }) => event.request.destination === "document",
+    ({ event }) => event.request.destination === "style",
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: "pages"
+      cacheName: "css",
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: yearInSeconds
+        })
+      ]
+    })
+  );
+
+  // Cache assets
+  workbox.routing.registerRoute(
+    /\/assets\//,
+    new workbox.strategies.NetworkFirst({
+      cacheName: "static-assets",
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: yearInSeconds
+        })
+      ]
     })
   );
 
@@ -29,7 +54,12 @@ if (workbox) {
   workbox.routing.registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: "google-fonts-stylesheets"
+      cacheName: "google-fonts-stylesheets",
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: yearInSeconds
+        })
+      ]
     })
   );
 
@@ -43,32 +73,15 @@ if (workbox) {
           statuses: [0, 200]
         }),
         new workbox.expiration.Plugin({
-          maxAgeSeconds: 60 * 60 * 24 * 365,
+          maxAgeSeconds: yearInSeconds,
           maxEntries: 30
         })
       ]
     })
   );
 
-  // Cache image files
-  workbox.routing.registerRoute(
-    /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
-    new workbox.strategies.CacheFirst({
-      cacheName: "images",
-      plugins: [
-        new workbox.expiration.Plugin({
-          maxEntries: 60,
-          maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
-        })
-      ]
-    })
-  );
-
-  workbox.routing.setDefaultHandler(
-    new workbox.strategies.StaleWhileRevalidate()
-  );
 
   workbox.googleAnalytics.initialize();
 } else {
-  console.error("Workbox didn't load");
+  console.log("Workbox didn't load");
 }
