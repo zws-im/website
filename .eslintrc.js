@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: ["@dice-discord"],
   env: {
-    browser: true
+    browser: true,
+    node: false,
+    es6: false
   }
 };
