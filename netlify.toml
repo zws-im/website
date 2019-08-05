@@ -19,19 +19,6 @@
   status = 302
 
 [[redirects]]
-  # "/U200b*"
-  from = "/​*"
-  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
-  status = 302
-
-[[redirects]]
-  # "/U200c*"
-  from = "/‌*"
-  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
-  status = 302
-
-[[redirects]]
-  # "/U180e*"
-  from = "/᠎*"
+  from = "/*"
   to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
   status = 302
