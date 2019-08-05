@@ -19,15 +19,13 @@
   })('https://www.gstatic.com/firebasejs/6.0.2/firebase-performance-standalone.js', firebaseConfig);
 </script>
 
-<!-- Register service worker and Workbox -->
+<!-- Register service worker -->
 <script>
+// Check that service workers are supported
 if ("serviceWorker" in navigator) {
   // Use the window load event to keep the page load performant
-  window.addEventListener("load", async () => {
-    await navigator.serviceWorker
-      .register("/sw.js", { scope: "./" });
-
-  console.log("Service worker registered");
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js");
   });
 }
 </script>
