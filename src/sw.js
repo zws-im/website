@@ -80,7 +80,6 @@ if (workbox) {
     })
   );
 
-
   workbox.googleAnalytics.initialize();
 } else {
   console.log("Workbox didn't load");
