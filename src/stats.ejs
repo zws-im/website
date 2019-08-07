@@ -1,7 +1,11 @@
 <script type="module">
   import stats from "/assets/js/stats.js"
 
-  window.stats = stats;
+  document.getElementById("submit").addEventListener("click", event => {
+    event.preventDefault();
+
+    stats();
+  });
 </script>
 
 <div class="auth__inner">
@@ -10,7 +14,7 @@
   </div>
   <div class="auth__auth">
     <h1 class="auth__title">URL Stats</h1>
-    <form onsubmit="event.preventDefault(); stats()" role="presentation" class="form">
+    <form role="presentation" class="form">
       <input id="long" type="url" placeholder="Long URL to see stats for (max 500 characters)" maxlength="500"
         required="" autofocus="" aria-label="Long URL to see stats for (max 500 characters)">
       <p id="result"></p>

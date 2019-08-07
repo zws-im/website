@@ -1,7 +1,11 @@
 <script type="module">
   import shorten from "/assets/js/shorten.js"
 
-  window.shorten = shorten;
+  document.getElementById("submit").addEventListener("click", event => {
+    event.preventDefault();
+
+    shorten();
+  });
 </script>
 
 <div class="auth__inner">
