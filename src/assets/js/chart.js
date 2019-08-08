@@ -1,4 +1,3 @@
-
 const add = (time, index) => [time, index + 1];
 
 export const update = (chart, data) =>
