@@ -1,4 +1,3 @@
-/* global gtag */
 import { apiURL, hostnames } from "/assets/js/constants.js";
 import copy from "/assets/js/copy.js";
 
