@@ -8,5 +8,8 @@ module.exports = {
     browser: true,
     node: false,
     es6: false
+  },
+  globals: {
+    ApexCharts: "readonly"
   }
 };

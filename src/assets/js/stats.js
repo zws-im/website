@@ -1,5 +1,3 @@
-/* global gtag */
-
 import { apiURL, hostnames } from "/assets/js/constants.js";
 
 export default () => {

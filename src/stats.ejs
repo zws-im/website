@@ -1,45 +1,43 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-<script src="https://bundle.run/chartjs-plugin-zoom@0.7.3"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-<script type="module">
+<script defer type="module">
   import stats from "/assets/js/stats.js";
-  import chart from "/assets/js/chart.js";
+  import { update, options } from "/assets/js/chart.js";
+
+  const chart = new ApexCharts(document.getElementById("chart"), options);
+
+  chart.render();
 
   document.getElementById("submit").addEventListener("click", event => {
     event.preventDefault();
 
     stats()
-    .then(async response => {
-      if (response.status === 404) {
-        return (result.innerText = "That URL couldn't be found or you don't have access to it");
-      } else {
-        const json = await response.json();
-        if (json.error) {
-          throw json.error;
-        } else if (!(200 <= response.status && response.status <= 299)) {
-          throw `${response.status} ${response.statusText} and said ${await response.json()}`;
-        }
+      .then(async response => {
+        if (response.status === 404) {
+          return (result.innerText = "That URL couldn't be found or you don't have access to it");
+        } else {
+          const json = await response.json();
+          if (json.error) {
+            throw json.error;
+          } else if (!(200 <= response.status && response.status <= 299)) {
+            throw `${response.status} ${response.statusText} and said ${await response.json()}`;
+          }
 
-        const image = document.getElementById("image");
-        if (image) {
-          image.remove(image);
-        }
-        chart(document.getElementById("chart"), { get: json.usage ? json.usage.get : [], shorten: json.usage ? json.usage.shorten : [] });
+          update(chart, { get: json.usage ? json.usage.get : [], shorten: json.usage ? json.usage.shorten : [] });
 
-        return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      return (result.innerText = `An error occurred: ${error}`);
-    });
+          return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        return (result.innerText = `An error occurred: ${error}`);
+      });
   });
 </script>
 
 <div class="auth__inner">
   <div class="auth__media">
-    <canvas id="chart"></canvas>
-    <img id="image" src="/assets/image/undraw_browser_stats.svg" alt="Browser stats">
+    <div id="chart"></div>
   </div>
   <div class="auth__auth">
     <h1 class="auth__title">URL Stats</h1>
