@@ -1,16 +1,45 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script src="https://bundle.run/chartjs-plugin-zoom@0.7.3"></script>
+
 <script type="module">
-  import stats from "/assets/js/stats.js"
+  import stats from "/assets/js/stats.js";
+  import chart from "/assets/js/chart.js";
 
   document.getElementById("submit").addEventListener("click", event => {
     event.preventDefault();
 
-    stats();
+    stats()
+    .then(async response => {
+      if (response.status === 404) {
+        return (result.innerText = "That URL couldn't be found or you don't have access to it");
+      } else {
+        const json = await response.json();
+        if (json.error) {
+          throw json.error;
+        } else if (!(200 <= response.status && response.status <= 299)) {
+          throw `${response.status} ${response.statusText} and said ${await response.json()}`;
+        }
+
+        const image = document.getElementById("image");
+        if (image) {
+          image.remove(image);
+        }
+        chart(document.getElementById("chart"), { get: json.usage ? json.usage.get : [], shorten: json.usage ? json.usage.shorten : [] });
+
+        return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      return (result.innerText = `An error occurred: ${error}`);
+    });
   });
 </script>
 
 <div class="auth__inner">
   <div class="auth__media">
-    <img src="/assets/image/undraw_browser_stats.svg" alt="Browser stats">
+    <canvas id="chart"></canvas>
+    <img id="image" src="/assets/image/undraw_browser_stats.svg" alt="Browser stats">
   </div>
   <div class="auth__auth">
     <h1 class="auth__title">URL Stats</h1>

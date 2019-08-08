@@ -24,23 +24,5 @@ export default () => {
     console.error("Unable to log URL stats event to Google Analytics");
   }
 
-  return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`)
-    .then(async response => {
-      if (response.status === 404) {
-        return (result.innerText = "That URL couldn't be found or you don't have access to it");
-      } else {
-        const json = await response.json();
-        if (json.error) {
-          throw json.error;
-        } else if (!(200 <= response.status && response.status <= 299)) {
-          throw `${response.status} ${response.statusText} and said ${await response.json()}`;
-        }
-
-        return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      return (result.innerText = `An error occurred: ${error}`);
-    });
+  return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`);
 };
