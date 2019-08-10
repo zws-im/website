@@ -7,6 +7,7 @@
     "url": "https://github.com/zws-im/zws/issues"
   },
   "dependencies": {
+    "apexcharts": "^3.8.4",
     "bulma": "^0.7.5"
   },
   "devDependencies": {
@@ -35,7 +36,8 @@
     "build": "rm -rf dist; parcel build src/*.html --experimental-scope-hoisting",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "serve": "parcel serve src/*.html"
+    "serve": "parcel serve src/*.html --no-autoinstall",
+    "watch": "parcel watch src/*.html --no-autoinstall"
   },
   "version": "1.13.4"
 }
