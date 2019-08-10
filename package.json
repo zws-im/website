@@ -33,7 +33,7 @@
     "url": "git+https://github.com/zws-im/zws.git"
   },
   "scripts": {
-    "build": "parcel build src/*.html --experimental-scope-hoisting",
+    "build": "rm -rf dist; parcel build src/*.html --experimental-scope-hoisting",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "serve": "parcel serve src/*.html"
