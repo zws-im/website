@@ -17,7 +17,7 @@ export default str => {
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-    // In case our URLs become 9007199254740991 2^53 − 1 digits long
+    // In case our URLs become 9007199254740991 digits long
     el.setSelectionRange(0, Number.MAX_SAFE_INTEGER);
 
     document.execCommand("copy");
