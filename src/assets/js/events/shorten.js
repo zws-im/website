@@ -31,8 +31,13 @@ export default event => {
 
   request
     .then(shortened => {
-      copy(shortened);
-      return (result.innerText = `Copied to clipboard: ${shortened}`);
+      try {
+        copy(shortened);
+        return (result.innerText = `Copied to clipboard: ${shortened}`);
+      } catch (error) {
+        console.error(error);
+        return (result.innerText = `Couldn't copy to clipboard: ${error}`);
+      }
     })
     .catch(error => {
       console.error(error);
