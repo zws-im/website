@@ -1,3 +1,5 @@
+import clipboard from "clipboard";
+
 export default str => {
   const iOS = navigator.userAgent.match(/ipad|iphone/i);
 
