@@ -30,5 +30,5 @@
     "lint:fix": "eslint . --fix",
     "serve": "harp server src"
   },
-  "version": "1.13.5"
+  "version": "1.13.6"
 }
