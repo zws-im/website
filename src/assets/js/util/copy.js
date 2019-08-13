@@ -6,7 +6,7 @@ export default str => {
     const range = document.createRange();
 
     el.classList.add("clipboard");
-    el.contentEditable = true
+    el.contentEditable = true;
     el.readOnly = false;
     el.value = str;
 
