@@ -1,6 +1,5 @@
 import shortenURL from "../api/shortenURL";
 import { elements, hostnames } from "../constants";
-import copy from "../util/copy";
 import load from "../util/loadUntilPromiseSettled";
 
 export default event => {
@@ -10,11 +9,11 @@ export default event => {
   const result = elements.outputs.shorten;
 
   if (hostnames.includes(new URL(url).hostname)) {
-    return (result.innerText = "Shortening a URL containing the URL shortener's hostname is disallowed");
+    return (result.value = "Shortening a URL containing the URL shortener's hostname is disallowed");
   }
 
   if (!navigator.onLine) {
-    return (result.innerText = "You are offline");
+    return (result.value = "You are offline");
   }
 
   const request = shortenURL(url);
@@ -31,16 +30,11 @@ export default event => {
 
   request
     .then(shortened => {
-      try {
-        copy(shortened);
-        return (result.innerText = `Copied to clipboard: ${shortened}`);
-      } catch (error) {
-        console.error(error);
-        return (result.innerText = `Couldn't copy to clipboard: ${error}`);
-      }
+      elements.copyButton.disabled = false;
+      return (result.value = shortened);
     })
     .catch(error => {
       console.error(error);
-      return (result.innerText = `An error occurred: ${error}`);
+      return (result.value = `An error occurred: ${error}`);
     });
 };
