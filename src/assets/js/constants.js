@@ -33,7 +33,8 @@ export const elements = {
     shorten: document.getElementById("shorten"),
     stats: document.getElementById("stats")
   },
-  chart: document.getElementById("chart")
+  chart: document.getElementById("chart"),
+  copyButton: document.getElementById("copy")
 };
 export const apexCharts = {
   chart: undefined,
