@@ -107,10 +107,17 @@
                       </button>
                     </div>
                   </div>
+                  <label for="shorten-url" class="label">Result</label>
+                  <div class="field has-addons">
+                    <div class="control is-expanded">
+                      <input readonly id="shorten-result" class="input" type="url" placeholder="Shortened URL" />
+                    </div>
+                    <div class="control">
+                      <button id="copy" type="button" class="button" data-clipboard-target="#shorten-result" disabled>
+                        Copy
+                      </button>
+                    </div>
                 </form>
-              </div>
-              <div class="content">
-                <p id="shorten-result"></p>
               </div>
             </div>
           </div>
