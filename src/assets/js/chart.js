@@ -5,13 +5,3 @@ export const update = (chart, data) =>
     { name: "Shortened", data: data.shorten.map(add) },
     { name: "Visited", data: data.get.map(add) }
   ]);
-
-export const options = {
-  chart: {
-    type: "area"
-  },
-  series: [],
-  xaxis: {
-    type: "datetime"
-  }
-};

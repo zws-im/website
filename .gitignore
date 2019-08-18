@@ -155,5 +155,5 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
-# Eleventy build output
-build
+# Parcel output
+dist

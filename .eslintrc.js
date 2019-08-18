@@ -10,7 +10,6 @@ module.exports = {
     es6: false
   },
   globals: {
-    ApexCharts: "readonly",
     gtag: "readonly"
   }
 };

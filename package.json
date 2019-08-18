@@ -1,16 +1,25 @@
 {
   "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
   "bugs": {
     "url": "https://github.com/zws-im/zws/issues"
   },
+  "dependencies": {
+    "apexcharts": "^3.8.4",
+    "bulma": "^0.7.5",
+    "clipboard": "^2.0.4"
+  },
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
-    "ejs": "^2.6.2",
+    "cssnano": "^4.1.10",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "harp": "^0.30.0",
-    "prettier": "^1.18.2"
+    "parcel": "^1.12.3",
+    "prettier": "^1.18.2",
+    "sass": "^1.22.9"
   },
   "keywords": [
     "url shortener",
@@ -25,10 +34,11 @@
     "url": "git+https://github.com/zws-im/zws.git"
   },
   "scripts": {
-    "build": "harp compile src build",
+    "build": "rm -rf dist; parcel build src/*.html --experimental-scope-hoisting",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "serve": "harp server src"
+    "serve": "parcel serve src/*.html --no-autoinstall",
+    "watch": "parcel watch src/*.html --no-autoinstall"
   },
-  "version": "1.13.6"
+  "version": "2.0.0"
 }

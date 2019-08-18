@@ -9,7 +9,7 @@ caches.delete("zws");
 if (workbox) {
   console.log("Workbox is loaded");
 
-  const yearInSeconds = 60 * 60 * 24 * 365;
+  const maxAgeSeconds = 60 * 60 * 24 * 14;
 
   // Cache pages
   workbox.routing.registerRoute(
@@ -18,7 +18,7 @@ if (workbox) {
       cacheName: "pages",
       plugins: [
         new workbox.expiration.Plugin({
-          maxAgeSeconds: yearInSeconds
+          maxAgeSeconds: maxAgeSeconds
         })
       ]
     })
@@ -31,7 +31,7 @@ if (workbox) {
       cacheName: "css",
       plugins: [
         new workbox.expiration.Plugin({
-          maxAgeSeconds: yearInSeconds
+          maxAgeSeconds: maxAgeSeconds
         })
       ]
     })
@@ -44,7 +44,7 @@ if (workbox) {
       cacheName: "static-assets",
       plugins: [
         new workbox.expiration.Plugin({
-          maxAgeSeconds: yearInSeconds
+          maxAgeSeconds: maxAgeSeconds
         })
       ]
     })
@@ -57,7 +57,7 @@ if (workbox) {
       cacheName: "google-fonts-stylesheets",
       plugins: [
         new workbox.expiration.Plugin({
-          maxAgeSeconds: yearInSeconds
+          maxAgeSeconds: maxAgeSeconds
         })
       ]
     })
@@ -73,7 +73,7 @@ if (workbox) {
           statuses: [0, 200]
         }),
         new workbox.expiration.Plugin({
-          maxAgeSeconds: yearInSeconds,
+          maxAgeSeconds: maxAgeSeconds,
           maxEntries: 30
         })
       ]
