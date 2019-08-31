@@ -1,4 +1,4 @@
-import ApexCharts from "apexcharts";
+import ApexCharts from "apexcharts/dist/apexcharts.js";
 import ClipboardJS from "clipboard";
 import { apexCharts, elements } from "./constants";
 import shorten from "./events/shorten";
