@@ -19,7 +19,7 @@ import { apiURL } from "../constants";
 export default url =>
   fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(url)}`).then(async response => {
     const json = await response.json();
-    if (json.error) {
+    if (json && json.error) {
       throw json.error;
     } else if (!response.ok) {
       throw response;
