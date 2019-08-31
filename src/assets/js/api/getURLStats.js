@@ -18,12 +18,15 @@ import { apiURL } from "../constants";
  */
 export default url =>
   fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(url)}`).then(async response => {
-    const json = await response.json();
-    if (json && json.error) {
-      throw json.error;
-    } else if (!response.ok) {
+    if (response.ok) {
+      const json = await response.json();
+
+      if (json && json.error) {
+        throw json.error;
+      }
+
+      return json;
+    } else {
       throw response;
     }
-
-    return json;
   });
