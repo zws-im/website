@@ -48,3 +48,4 @@ export const apexCharts = {
     }
   }
 };
+export const sentryDSN = "https://38d93163fb5a454a91d9a5ce317a07db@sentry.io/760993";

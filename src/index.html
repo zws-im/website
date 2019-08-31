@@ -2,6 +2,10 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <!-- Sentry error logging -->
+  <script src="https://browser.sentry-cdn.com/5.6.3/bundle.js" crossorigin="anonymous"></script>
+  <script src="assets/js/util/errorLogging.js"></script>
+
   <!-- Firebase performance monitoring -->
   <script type="text/javascript">
     const firebaseConfig = {
@@ -131,7 +135,7 @@
                 </p>
                 <p><a
                     href="https://www.producthunt.com/posts/zero-width-shortener?utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_souce=badge-zero-width-shortener"
-                    target="_blank" rel="noopener">
+                    target="_blank" rel="noopener noreferrer">
                     <img
                       src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=161876&amp;theme=dark&amp;period=daily"
                       alt="Zero Width Shortener - Shorten URLs with zero-width characters | Product Hunt Embed"
