@@ -43,4 +43,19 @@ export const apexCharts = {
     }
   }
 };
+/**
+ * DSN used to log errors to Sentry.
+ */
 export const sentryDSN = "https://11bb1aafb0044731a257962791bed8f4@sentry.io/1547351";
+/**
+ * The config used for Firebase.
+ */
+export const firebaseConfig = {
+  apiKey: "AIzaSyCIqCPfiJBy520wr73EkZXXuNX-BBwCWm4",
+  authDomain: "zero-width-shortener.firebaseapp.com",
+  databaseURL: "https://zero-width-shortener.firebaseio.com",
+  projectId: "zero-width-shortener",
+  storageBucket: "zero-width-shortener.appspot.com",
+  messagingSenderId: "1090998003190",
+  appId: "1:1090998003190:web:c26f056545426aa4"
+};

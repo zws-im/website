@@ -7,46 +7,14 @@
   <script src="assets/js/util/sentry.js"></script>
 
   <!-- Firebase performance monitoring -->
-  <script type="text/javascript">
-    const firebaseConfig = {
-      apiKey: "AIzaSyCIqCPfiJBy520wr73EkZXXuNX-BBwCWm4",
-      authDomain: "zero-width-shortener.firebaseapp.com",
-      databaseURL: "https://zero-width-shortener.firebaseio.com",
-      projectId: "zero-width-shortener",
-      storageBucket: "zero-width-shortener.appspot.com",
-      messagingSenderId: "1090998003190",
-      appId: "1:1090998003190:web:c26f056545426aa4"
-    };
-
-    (function (sa, fbc) {
-      function load(f, c) {
-        var a = document.createElement("script");
-        a.async = 1; a.src = f; var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(a, s);
-      } load(sa); window.onload = function () { firebase.initializeApp(fbc).performance(); };
-    })("https://www.gstatic.com/firebasejs/6.0.2/firebase-performance-standalone.js", firebaseConfig);
-  </script>
+  <script type="text/javascript" src="assets/js/util/firebase.js"></script>
 
   <!-- Register service worker -->
-  <script>
-    // Check that service workers are supported
-    if ("serviceWorker" in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/sw.js");
-      });
-    }
-  </script>
+  <script src="assets/js/util/registerServiceWorker.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133415948-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-
-    gtag("config", "UA-133415948-3", { "optimize_id": "GTM-MT97RH2" });
-  </script>
+  <script src="assets/js/util/analytics.js"></script>
 
   <!-- CSS and formatting -->
   <meta charset="utf-8">

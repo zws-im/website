@@ -11,6 +11,7 @@ module.exports = {
   },
   globals: {
     gtag: "readonly",
-    Sentry: "readonly"
+    Sentry: "readonly",
+    dataLayer: "readonly"
   }
 };

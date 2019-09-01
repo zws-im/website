@@ -1,7 +1,6 @@
 /* eslint-env serviceworker */
-/* global workbox */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+import workbox from "workbox-sw";
 
 // Delete the old cache
 caches.delete("zws");
