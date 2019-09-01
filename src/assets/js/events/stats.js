@@ -3,6 +3,17 @@ import { update as updateChart } from "../chart";
 import { apexCharts, elements, hostnames } from "../constants";
 import load from "../util/loadUntilPromiseSettled";
 
+/**
+ * API stats response object.
+ * @typedef {Object} Stats
+ * @property {string} [error] String message of an error that occurred
+ * @property {number} [get] Number of times the shortened URL was visited
+ * @property {number} [shorten] Number of times the long URL was shortened
+ * @property {Object} [usage] Usage info for the URL
+ * @property {Array<number>} usage.get Array of timestamps (in milliseconds) when the shortened URL was visited
+ * @property {Array<number>} usage.shorten Array of timestamps (in milliseconds) when the long URL was shortened
+ */
+
 export default () => {
   event.preventDefault();
 
@@ -32,6 +43,9 @@ export default () => {
 
   request.then(async response => {
     if (response.ok) {
+      /**
+       * @type {Stats}
+       */
       const stats = await response.json();
 
       updateChart(apexCharts.chart, {
