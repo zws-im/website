@@ -10,3 +10,5 @@ Sentry.init({
     return event;
   }
 });
+
+window.addEventListener("unhandledrejection", data => Sentry.captureException(data.reason));
