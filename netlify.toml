@@ -13,6 +13,8 @@
   # Default build command.
   command = "yarn run build"
 
+  environment = { YARN_VERSION = "1.17.3" }
+
 [[redirects]]
   from = "/*/stats"
   to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURLStats/:splat"
