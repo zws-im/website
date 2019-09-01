@@ -14,19 +14,8 @@ import { apiURL } from "../constants";
 /**
  * Get stats for a long URL.
  * @param {string} url Long URL to get stats for
- * @returns {Stats} Stats response from server
+ * @returns {Response} Fetch response from API endpoint
  */
-export default url =>
-  fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(url)}`).then(async response => {
-    if (response.ok) {
-      const json = await response.json();
-
-      if (json && json.error) {
-        throw json.error;
-      }
-
-      return json;
-    } else {
-      throw response;
-    }
-  });
+export default async url => {
+  return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(url)}`);
+};

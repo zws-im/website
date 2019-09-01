@@ -30,21 +30,23 @@ export default () => {
     console.error("Unable to log URL stats event to Google Analytics");
   }
 
-  request
-    .then(stats => {
+  request.then(async response => {
+    if (response.ok) {
+      const stats = await response.json();
+
       updateChart(apexCharts.chart, {
-        get: stats.usage ? stats.usage.get : [],
+        get: stats.usage ? stats.usage. get : [],
         shorten: stats.usage ? stats.usage.shorten : []
       });
 
       return (result.innerText = `Shortened ${stats.shorten.toLocaleString()} times and visited ${stats.get.toLocaleString()} times.`);
-    })
-    .catch(response => {
+    } else {
       if (response.status === 404) {
         return (result.innerText = "That URL couldn't be found or you don't have access to it");
       } else {
         console.error(response);
-        return (result.innerText = `An error occurred: ${response}`);
+        return (result.innerText = `An error occurred: ${response.status}`);
       }
-    });
+    }
+  });
 };
