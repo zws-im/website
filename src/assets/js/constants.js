@@ -7,10 +7,7 @@ export const apiURL = "https://us-central1-zero-width-shortener.cloudfunctions.n
  * Used in addition to server-side validation to prevent shortening an already short URL.
  * @enum {string} Hostname of a ZWS instance
  */
-export const hostnames = [
-  "zws.im",
-  "zws.jonahsnider.ninja"
-];
+export const hostnames = ["zws.im", "zws.jonahsnider.ninja"];
 /**
  * HTML elements used across the project.
  */
