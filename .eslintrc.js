@@ -10,6 +10,7 @@ module.exports = {
     es6: false
   },
   globals: {
-    gtag: "readonly"
+    gtag: "readonly",
+    Sentry: "readonly"
   }
 };
