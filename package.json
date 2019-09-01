@@ -11,8 +11,7 @@
     "apexcharts": "^3.8.4",
     "bulma": "^0.7.5",
     "clipboard": "^2.0.4",
-    "firebase": "^6.5.0",
-    "workbox-sw": "^4.3.1"
+    "firebase": "^6.5.0"
   },
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
@@ -43,5 +42,5 @@
     "serve": "parcel serve src/*.html --no-autoinstall",
     "watch": "parcel watch src/*.html --no-autoinstall"
   },
-  "version": "2.1.21"
+  "version": "2.1.22"
 }
