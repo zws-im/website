@@ -5,6 +5,4 @@ import { apiURL } from "../constants";
  * @param {string} url Long URL to get stats for
  * @returns {Response} Fetch response from API endpoint
  */
-export default async url => {
-  return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(url)}`);
-};
+export default url => fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(url)}`);

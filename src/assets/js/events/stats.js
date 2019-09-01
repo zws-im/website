@@ -1,5 +1,5 @@
 import getURLStats from "../api/getURLStats";
-import { update as updateChart } from "../chart";
+import { reset, update } from "../chart";
 import { apexCharts, elements, hostnames } from "../constants";
 import load from "../util/loadUntilPromiseSettled";
 
@@ -48,13 +48,15 @@ export default () => {
        */
       const stats = await response.json();
 
-      updateChart(apexCharts.chart, {
-        get: stats.usage ? stats.usage. get : [],
+      update(apexCharts.chart, {
+        get: stats.usage ? stats.usage.get : [],
         shorten: stats.usage ? stats.usage.shorten : []
       });
 
       return (result.innerText = `Shortened ${stats.shorten.toLocaleString()} times and visited ${stats.get.toLocaleString()} times.`);
     } else {
+      reset(apexCharts.chart);
+
       if (response.status === 404) {
         return (result.innerText = "That URL couldn't be found or you don't have access to it");
       } else {
