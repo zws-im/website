@@ -1,3 +1,5 @@
+import Chart from "./types/chart";
+
 /**
  * Base API URL to use for requests.
  */
@@ -5,7 +7,6 @@ export const apiURL = "https://us-central1-zero-width-shortener.cloudfunctions.n
 /**
  * Hostnames of ZWS instances.
  * Used in addition to server-side validation to prevent shortening an already short URL.
- * @enum {string} Hostname of a ZWS instance
  */
 export const hostnames = ["zws.im", "zws.jonahsnider.ninja"];
 /**
@@ -13,23 +14,23 @@ export const hostnames = ["zws.im", "zws.jonahsnider.ninja"];
  */
 export const elements = {
   submitButtons: {
-    shorten: document.getElementById("shorten-submit"),
-    stats: document.getElementById("stats-submit")
+    shorten: document.getElementById("shorten-submit") as HTMLButtonElement,
+    stats: document.getElementById("stats-submit") as HTMLButtonElement
   },
   inputs: {
-    shorten: document.getElementById("shorten-url"),
-    stats: document.getElementById("stats-url")
+    shorten: document.getElementById("shorten-url") as HTMLInputElement,
+    stats: document.getElementById("stats-url") as HTMLInputElement
   },
   outputs: {
-    shorten: document.getElementById("shorten-result"),
-    stats: document.getElementById("stats-result")
+    shorten: document.getElementById("shorten-result") as HTMLInputElement,
+    stats: document.getElementById("stats-result") as HTMLParagraphElement
   },
   forms: {
-    shorten: document.getElementById("shorten"),
-    stats: document.getElementById("stats")
+    shorten: document.getElementById("shorten") as HTMLFormElement,
+    stats: document.getElementById("stats") as HTMLFormElement
   },
-  chart: document.getElementById("chart"),
-  copyButton: document.getElementById("copy")
+  chart: document.getElementById("chart") as HTMLDivElement,
+  copyButton: document.getElementById("copy") as HTMLButtonElement
 };
 export const apexCharts = {
   chart: undefined,
@@ -42,7 +43,7 @@ export const apexCharts = {
       type: "datetime"
     }
   }
-};
+} as Chart;
 /**
  * DSN used to log errors to Sentry.
  */

@@ -1,9 +1,9 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 8,
+    ecmaVersion: 2019,
     sourceType: "module"
   },
-  extends: ["@dice-discord"],
+  extends: ["@dice-discord", "plugin:@typescript-eslint/recommended"],
   env: {
     browser: true,
     node: false,
@@ -13,5 +13,6 @@ module.exports = {
     gtag: "readonly",
     Sentry: "readonly",
     dataLayer: "readonly"
-  }
+  },
+  parser: "@typescript-eslint/parser"
 };
