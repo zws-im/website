@@ -1,4 +1,6 @@
 export default interface Usage {
-  get: number[] | undefined;
-  shorten: number[] | undefined;
+  /** Array of timestamps that the shortened URL was visited */
+  get: number[];
+  /** Array of timestamps that this URL was shortened */
+  shorten: number[];
 }

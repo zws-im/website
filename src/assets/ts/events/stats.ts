@@ -3,6 +3,7 @@ import { reset, update } from "../chart";
 import { apexCharts, elements, hostnames } from "../constants";
 import Stats from "../types/stats";
 import load from "../util/loadUntilPromiseSettled";
+import validateURL from "../util/validateURL";
 
 export default event => {
   event.preventDefault();
@@ -14,31 +15,23 @@ export default event => {
   const { value: url } = elements.inputs.stats;
   const result = elements.outputs.stats;
 
+  if (!validateURL(url)) {
+    return (result.innerText = "Invalid URL");
+  }
+
   if (hostnames.includes(new URL(url).hostname)) {
-    if (result) {
-      return (result.innerText =
-        "Shortening a URL containing the URL shortener's hostname is disallowed so there won't be any results");
-    } else {
-      throw new Error("Could not find result element");
-    }
+    return (result.innerText =
+      "Shortening a URL containing the URL shortener's hostname is disallowed so there won't be any results");
   }
 
   if (!navigator.onLine) {
-    if (result) {
-      return (result.innerText = "You are offline");
-    } else {
-      throw new Error("Could not find result element");
-    }
+    return (result.innerText = "You are offline");
   }
 
   const request = getURLStats(url);
 
-  if (elements.submitButtons.stats) {
-    // Make the button load until the request is finished
-    load(elements.submitButtons.stats, request);
-  } else {
-    throw new Error("Could not find stats submit button");
-  }
+  // Make the button load until the request is finished
+  load(elements.submitButtons.stats, request);
 
   try {
     // eslint-disable-next-line camelcase
@@ -60,29 +53,21 @@ export default event => {
         throw new Error("Could not find chart");
       }
 
-      if (result) {
-        return (result.innerText = `Shortened ${(stats.shorten || 0).toLocaleString()} times and visited ${(
-          stats.get || 0
-        ).toLocaleString()} times.`);
-      } else {
-        throw new Error("Could not find result element");
-      }
+      return (result.innerText = `Shortened ${(stats.shorten || 0).toLocaleString()} times and visited ${(
+        stats.get || 0
+      ).toLocaleString()} times.`);
     } else {
-      reset(apexCharts.chart);
+      if (apexCharts.chart) {
+        reset(apexCharts.chart);
+      } else {
+        throw new Error("Could not find chart");
+      }
 
       if (response.status === 404) {
-        if (result) {
-          return (result.innerText = "That URL couldn't be found or you don't have access to it");
-        } else {
-          throw new Error("Could not find result element");
-        }
+        return (result.innerText = "That URL couldn't be found or you don't have access to it");
       } else {
         console.error(response);
-        if (result) {
-          return (result.innerText = `An error occurred: ${response.status}`);
-        } else {
-          throw new Error("Could not find result element");
-        }
+        return (result.innerText = `An error occurred: ${response.status}`);
       }
     }
   });

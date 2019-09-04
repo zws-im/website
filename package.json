@@ -49,5 +49,5 @@
     "serve": "parcel serve src/*.html --no-autoinstall",
     "watch": "parcel watch src/*.html --no-autoinstall"
   },
-  "version": "3.0.0"
+  "version": "3.0.1"
 }

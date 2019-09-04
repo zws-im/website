@@ -1,8 +1,9 @@
 import Usage from "./usage";
 
 export default interface Stats {
-  error: string | undefined;
-  get: number | undefined;
-  shorten: number | undefined;
-  usage: Usage | undefined;
+  /** Number of times that the shortened URL was visited */
+  get: number;
+  /** Number of times that this URL was shortened */
+  shorten: number;
+  usage: Usage;
 }
