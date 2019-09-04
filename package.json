@@ -44,8 +44,8 @@
     "build": "rm -rf dist; parcel build src/*.html",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prettier": "prettier --check \"./**/*.{{j,t}sx?,flow,{c,le,sc}ss,html,json,md,ya?ml}\"",
-    "prettier:fix": "prettier --check --write \"./**/*.{{j,t}sx?,flow,{c,le,sc}ss,html,json,md,ya?ml}\"",
+    "prettier": "prettier --check \"./**/*.{{j,t}s[x],flow,{[s]c,le}ss,json,md,y[a]ml}\"",
+    "prettier:fix": "prettier --check --write \"./**/*.{{j,t}s[x],flow,{[s]c,le}ss,json,md,y[a]ml}\"",
     "serve": "parcel serve src/*.html --no-autoinstall",
     "watch": "parcel watch src/*.html --no-autoinstall"
   },
