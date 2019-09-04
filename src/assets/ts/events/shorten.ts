@@ -23,6 +23,12 @@ export default event => {
 
   const request = shortenURL(url);
 
+  window.Sentry.addBreadcrumb({
+    category: "urls.shorten",
+    message: `Shortenened URL ${url}`,
+    level: window.Sentry.Severity.Info
+  });
+
   // Make the button load until the request is finished
   load(elements.submitButtons.shorten, request);
 

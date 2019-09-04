@@ -30,6 +30,12 @@ export default event => {
 
   const request = getURLStats(url);
 
+  window.Sentry.addBreadcrumb({
+    category: "urls.stats",
+    message: `Check statistics of URL ${url}`,
+    level: window.Sentry.Severity.Info
+  });
+
   // Make the button load until the request is finished
   load(elements.submitButtons.stats, request);
 
