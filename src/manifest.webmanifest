@@ -1,5 +1,5 @@
 {
-  "background_color": "#ffffff",
+  "background_color": "#FFFFFF",
   "display": "standalone",
   "icons": [
     {
@@ -12,5 +12,5 @@
   "scope": "/",
   "short_name": "ZWS",
   "start_url": "/",
-  "theme_color": "#121212"
+  "theme_color": "#F5F5F5"
 }
