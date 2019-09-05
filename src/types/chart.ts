@@ -1,4 +1,4 @@
-export default interface Chart {
+export interface Chart {
   chart?: ApexCharts;
   options: Object;
 }

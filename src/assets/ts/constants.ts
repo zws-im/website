@@ -1,4 +1,4 @@
-import Chart from "./types/chart";
+import { Chart } from "../../types/chart";
 
 /**
  * Base API URL to use for requests.

@@ -1,5 +1,5 @@
 import ApexCharts from "apexcharts";
-import Usage from "./types/usage";
+import Usage from "../../types/usage";
 
 /**
  * Generates data in the ApexCharts format for an area chart.

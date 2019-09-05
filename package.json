@@ -1,7 +1,7 @@
 {
   "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
   "browserslist": [
-    "last 1 Chrome version"
+    "last 25 Chrome versions"
   ],
   "bugs": {
     "url": "https://github.com/zws-im/website/issues"
@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
-    "@sentry/types": "^5.6.1",
     "@types/gtag.js": "^0.0.3",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",

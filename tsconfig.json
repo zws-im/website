@@ -16,7 +16,9 @@
     // Required for a funny Firebase module error
     "moduleResolution": "node",
     // The Firebase module will make TypeScript mad otherwise
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    // Used for loading version number
+    "resolveJsonModule": true
   },
-  "include": ["src/assets/ts"]
+  "include": ["src/assets/ts", "src/types", "@sentry/types"]
 }

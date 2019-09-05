@@ -1,7 +1,7 @@
+import { Stats } from "../../../types/stats";
 import getURLStats from "../api/getURLStats";
 import { reset, update } from "../chart";
 import { apexCharts, elements, hostnames } from "../constants";
-import Stats from "../types/stats";
 import load from "../util/loadUntilPromiseSettled";
 import validateURL from "../util/validateURL";
 
