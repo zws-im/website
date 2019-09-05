@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@dice-discord/eslint-config": "^3.0.0",
+    "@types/clipboard": "^2.0.1",
     "@types/gtag.js": "^0.0.3",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
