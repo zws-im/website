@@ -38,7 +38,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zws-im/zws.git"
+    "url": "git+https://github.com/zws-im/website.git"
   },
   "scripts": {
     "build": "rm -rf dist; parcel build src/*.html",
