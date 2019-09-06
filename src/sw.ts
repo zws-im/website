@@ -1,6 +1,9 @@
 /* eslint-env serviceworker */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js", "https://browser.sentry-cdn.com/5.6.3/bundle.min.js");
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js",
+  "https://browser.sentry-cdn.com/5.6.3/bundle.min.js"
+);
 
 // Delete the old cache
 caches.delete("zws");
@@ -11,7 +14,7 @@ if (self.workbox) {
   self.Sentry.addBreadcrumb({
     category: "sw.workbox.load",
     message: `Workbox is loaded`,
-    level: (self).Sentry.Severity.Info
+    level: self.Sentry.Severity.Info
   });
 
   const maxAgeSeconds = 60 * 60 * 24 * 14;

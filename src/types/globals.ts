@@ -1,4 +1,3 @@
-
 interface Window {
   /** Used by Google Analytics */
   dataLayer: any[];
