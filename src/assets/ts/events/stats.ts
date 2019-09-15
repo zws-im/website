@@ -5,12 +5,8 @@ import { apexCharts, elements, hostnames } from "../constants";
 import load from "../util/loadUntilPromiseSettled";
 import validateURL from "../util/validateURL";
 
-export default event => {
+export default (event: Event) => {
   event.preventDefault();
-
-  if (!elements.inputs.stats) {
-    throw new Error("Could not find stats input element");
-  }
 
   const { value: url } = elements.inputs.stats;
   const result = elements.outputs.stats;

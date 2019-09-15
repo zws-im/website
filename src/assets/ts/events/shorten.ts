@@ -3,7 +3,7 @@ import { elements, hostnames } from "../constants";
 import load from "../util/loadUntilPromiseSettled";
 import validateURL from "../util/validateURL";
 
-export default event => {
+export default (event: Event) => {
   event.preventDefault();
 
   const { value: url } = elements.inputs.shorten;
