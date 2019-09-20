@@ -25,3 +25,8 @@
   from = "/*"
   to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
   status = 302
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/:splat"
+  status = 200
