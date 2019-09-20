@@ -19,6 +19,21 @@ if (self.workbox) {
 
   const maxAgeSeconds = 60 * 60 * 24 * 14;
 
+  // Cache API requests
+  self.workbox.routing.registerRoute(
+    ({ event }) => {
+      return ((new URL(event.request.url)).pathname || "").startsWith("/api");
+    },
+    new self.workbox.strategies.NetworkFirst({
+      cacheName: "api-requests",
+      plugins: [
+        new self.workbox.expiration.Plugin({
+          maxAgeSeconds: maxAgeSeconds
+        })
+      ]
+    })
+  );
+
   // Cache pages
   self.workbox.routing.registerRoute(
     ({ event }) => event.request.destination === "document",
