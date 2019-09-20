@@ -45,7 +45,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check \"./**/*.{{j,t}{s,sx},flow,{{sc,c},le}ss,json,md,{y,ya}ml}\"",
-    "prettier:fix": "prettier --check --write \"./**/*.{{j,t}{s,sx},flow,{[s]c,le}ss,json,md,{y,ya}ml}\"",
+    "prettier:fix": "prettier --check --write \"./**/*.{{j,t}{s,sx},flow,{{sc,c},le}ss,json,md,{y,ya}ml}\"",
     "serve": "parcel serve src/*.html --no-autoinstall",
     "watch": "parcel watch src/*.html --no-autoinstall"
   },
