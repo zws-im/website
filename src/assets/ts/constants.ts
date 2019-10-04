@@ -38,7 +38,13 @@ export const apexCharts = {
     chart: {
       type: "area"
     },
-    series: [],
+    series: [
+      {
+        name: "Shortened",
+        data: []
+      },
+      { name: "Visited", data: [] }
+    ],
     xaxis: {
       type: "datetime"
     }
