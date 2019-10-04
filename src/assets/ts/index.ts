@@ -15,9 +15,7 @@ apexCharts.chart = new ApexCharts(elements.chart, apexCharts.options);
 
 if (apexCharts.chart) {
   apexCharts.chart.render();
-}
 
-if (apexCharts.chart) {
   reset(apexCharts.chart);
 } else {
   throw new Error("Could not find chart");
