@@ -26,7 +26,7 @@ export default (event: Event) => {
   window.Sentry.addBreadcrumb({
     category: "urls.shorten",
     message: `Shortenened URL ${url}`,
-    level: window.Sentry.Severity.Info
+    level: window.Sentry.Severity.Info,
   });
 
   // Make the button load until the request is finished
@@ -40,11 +40,11 @@ export default (event: Event) => {
   }
 
   request
-    .then(shortened => {
+    .then((shortened) => {
       elements.copyButton.disabled = false;
       return (result.value = shortened);
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(error);
       return (result.value = `An error occurred: ${error}`);
     });

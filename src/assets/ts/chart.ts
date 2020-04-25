@@ -15,9 +15,9 @@ export const update = (chart: ApexCharts, data: Usage) =>
   chart.updateSeries([
     {
       name: "Shortened",
-      data: data.shorten.map(generateAreaChart)
+      data: data.shorten.map(generateAreaChart),
     },
-    { name: "Visited", data: data.get.map(generateAreaChart) }
+    { name: "Visited", data: data.get.map(generateAreaChart) },
   ]);
 
 /**
@@ -25,5 +25,8 @@ export const update = (chart: ApexCharts, data: Usage) =>
  * @param chart Chart to clear the date for
  */
 export const reset = (chart: ApexCharts) => {
-  chart.updateSeries([{ name: "Shortened", data: [] }, { name: "Visited", data: [] }]);
+  chart.updateSeries([
+    { name: "Shortened", data: [] },
+    { name: "Visited", data: [] },
+  ]);
 };

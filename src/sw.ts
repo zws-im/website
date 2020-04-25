@@ -14,7 +14,7 @@ if (self.workbox) {
   self.Sentry.addBreadcrumb({
     category: "sw.workbox.load",
     message: `Workbox is loaded`,
-    level: self.Sentry.Severity.Info
+    level: self.Sentry.Severity.Info,
   });
 
   const maxAgeSeconds = 60 * 60 * 24 * 14;
@@ -22,15 +22,15 @@ if (self.workbox) {
   // Cache API requests
   self.workbox.routing.registerRoute(
     ({ event }) => {
-      return ((new URL(event.request.url)).pathname || "").startsWith("/api");
+      return (new URL(event.request.url).pathname || "").startsWith("/api");
     },
     new self.workbox.strategies.NetworkFirst({
       cacheName: "api-requests",
       plugins: [
         new self.workbox.expiration.Plugin({
-          maxAgeSeconds: maxAgeSeconds
-        })
-      ]
+          maxAgeSeconds: maxAgeSeconds,
+        }),
+      ],
     })
   );
 
@@ -41,9 +41,9 @@ if (self.workbox) {
       cacheName: "pages",
       plugins: [
         new self.workbox.expiration.Plugin({
-          maxAgeSeconds: maxAgeSeconds
-        })
-      ]
+          maxAgeSeconds: maxAgeSeconds,
+        }),
+      ],
     })
   );
 
@@ -54,9 +54,9 @@ if (self.workbox) {
       cacheName: "css",
       plugins: [
         new self.workbox.expiration.Plugin({
-          maxAgeSeconds: maxAgeSeconds
-        })
-      ]
+          maxAgeSeconds: maxAgeSeconds,
+        }),
+      ],
     })
   );
 
@@ -67,9 +67,9 @@ if (self.workbox) {
       cacheName: "static-assets",
       plugins: [
         new self.workbox.expiration.Plugin({
-          maxAgeSeconds: maxAgeSeconds
-        })
-      ]
+          maxAgeSeconds: maxAgeSeconds,
+        }),
+      ],
     })
   );
 
@@ -80,9 +80,9 @@ if (self.workbox) {
       cacheName: "google-fonts-stylesheets",
       plugins: [
         new self.workbox.expiration.Plugin({
-          maxAgeSeconds: maxAgeSeconds
-        })
-      ]
+          maxAgeSeconds: maxAgeSeconds,
+        }),
+      ],
     })
   );
 
@@ -93,13 +93,13 @@ if (self.workbox) {
       cacheName: "google-fonts-webfonts",
       plugins: [
         new self.workbox.cacheableResponse.Plugin({
-          statuses: [0, 200]
+          statuses: [0, 200],
         }),
         new self.workbox.expiration.Plugin({
           maxAgeSeconds: maxAgeSeconds,
-          maxEntries: 30
-        })
-      ]
+          maxEntries: 30,
+        }),
+      ],
     })
   );
 
@@ -108,7 +108,7 @@ if (self.workbox) {
   self.Sentry.addBreadcrumb({
     category: "sw.workbox.load",
     message: `Workbox didn't load`,
-    level: self.Sentry.Severity.Error
+    level: self.Sentry.Severity.Error,
   });
   console.error("Workbox didn't load");
 }

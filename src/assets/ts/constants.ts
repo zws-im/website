@@ -15,40 +15,40 @@ export const hostnames = ["zws.im", "zws.jonahsnider.ninja"];
 export const elements = {
   submitButtons: {
     shorten: document.getElementById("shorten-submit") as HTMLButtonElement,
-    stats: document.getElementById("stats-submit") as HTMLButtonElement
+    stats: document.getElementById("stats-submit") as HTMLButtonElement,
   },
   inputs: {
     shorten: document.getElementById("shorten-url") as HTMLInputElement,
-    stats: document.getElementById("stats-url") as HTMLInputElement
+    stats: document.getElementById("stats-url") as HTMLInputElement,
   },
   outputs: {
     shorten: document.getElementById("shorten-result") as HTMLInputElement,
-    stats: document.getElementById("stats-result") as HTMLParagraphElement
+    stats: document.getElementById("stats-result") as HTMLParagraphElement,
   },
   forms: {
     shorten: document.getElementById("shorten") as HTMLFormElement,
-    stats: document.getElementById("stats") as HTMLFormElement
+    stats: document.getElementById("stats") as HTMLFormElement,
   },
   chart: document.getElementById("chart") as HTMLDivElement,
-  copyButton: document.getElementById("copy") as HTMLButtonElement
+  copyButton: document.getElementById("copy") as HTMLButtonElement,
 };
 export const apexCharts = {
   chart: undefined,
   options: {
     chart: {
-      type: "area"
+      type: "area",
     },
     series: [
       {
         name: "Shortened",
-        data: []
+        data: [],
       },
-      { name: "Visited", data: [] }
+      { name: "Visited", data: [] },
     ],
     xaxis: {
-      type: "datetime"
-    }
-  }
+      type: "datetime",
+    },
+  },
 } as Chart;
 /**
  * DSN used to log errors to Sentry.
@@ -64,5 +64,5 @@ export const firebaseConfig = {
   projectId: "zero-width-shortener",
   storageBucket: "zero-width-shortener.appspot.com",
   messagingSenderId: "1090998003190",
-  appId: "1:1090998003190:web:c26f056545426aa4"
+  appId: "1:1090998003190:web:c26f056545426aa4",
 };

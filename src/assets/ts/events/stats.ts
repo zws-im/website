@@ -29,7 +29,7 @@ export default (event: Event) => {
   window.Sentry.addBreadcrumb({
     category: "urls.stats",
     message: `Check statistics of URL ${url}`,
-    level: window.Sentry.Severity.Info
+    level: window.Sentry.Severity.Info,
   });
 
   // Make the button load until the request is finished
@@ -42,14 +42,14 @@ export default (event: Event) => {
     console.error("Unable to log URL stats event to Google Analytics");
   }
 
-  request.then(async response => {
+  request.then(async (response) => {
     if (response.ok) {
       const stats: Stats = await response.json();
 
       if (apexCharts.chart) {
         update(apexCharts.chart, {
           get: stats.usage ? stats.usage.get : [],
-          shorten: stats.usage ? stats.usage.shorten : []
+          shorten: stats.usage ? stats.usage.shorten : [],
         });
       } else {
         throw new Error("Could not find chart");

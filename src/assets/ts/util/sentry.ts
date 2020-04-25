@@ -4,7 +4,7 @@ import { sentryDSN } from "../constants";
 // @ts-ignore
 window.Sentry.init({
   dsn: sentryDSN,
-  beforeSend: event => {
+  beforeSend: (event) => {
     // Check if it is an exception, and if so, show the report dialog
     if (event.exception) {
       // @ts-ignore
@@ -12,7 +12,7 @@ window.Sentry.init({
     }
     return event;
   },
-  release: `website@${version}`
+  release: `website@${version}`,
 });
 
-window.addEventListener("unhandledrejection", data => window.Sentry.captureException(data.reason));
+window.addEventListener("unhandledrejection", (data) => window.Sentry.captureException(data.reason));
