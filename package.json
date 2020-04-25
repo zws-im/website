@@ -41,11 +41,10 @@
     "url": "git+https://github.com/zws-im/website.git"
   },
   "scripts": {
-    "build": "rm -rf dist; parcel build src/*.html",
+    "build": "parcel build src/*.html",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "prettier": "prettier --check \"./**/*.{{j,t}{s,sx},flow,{{sc,c},le}ss,json,md,{y,ya}ml}\"",
-    "prettier:fix": "prettier --check --write \"./**/*.{{j,t}{s,sx},flow,{{sc,c},le}ss,json,md,{y,ya}ml}\"",
+    "prebuild": "rm -rf dist",
+    "prettier": "prettier --check .",
     "serve": "parcel serve src/*.html --no-autoinstall",
     "watch": "parcel watch src/*.html --no-autoinstall"
   },
