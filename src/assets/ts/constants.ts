@@ -58,7 +58,7 @@ export const sentryDSN = "https://11bb1aafb0044731a257962791bed8f4@sentry.io/154
  * The config used for Firebase.
  */
 export const firebaseConfig = {
-  apiKey: "AIzaSyBEXemU-DfMrOg5S4UnF7EY6IfnqkmwdmI",
+  apiKey: "AIzaSyD7FWMJ3kPxXBAUdUxJAo0VeIthjHPioWE",
   authDomain: "zero-width-shortener.firebaseapp.com",
   databaseURL: "https://zero-width-shortener.firebaseio.com",
   projectId: "zero-width-shortener",
