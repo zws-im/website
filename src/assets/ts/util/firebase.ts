@@ -1,11 +1,12 @@
-import firebase from "firebase/app";
-import "firebase/performance";
+import { analytics as initAnalytics, apps, initializeApp, performance } from "firebase/app";
 import { firebaseConfig } from "../constants";
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+export const app = apps.length === 0 ? initializeApp(firebaseConfig) : apps[0];
+
+import "firebase/performance";
 
 // Initialize Performance Monitoring and get a reference to the service
-const perf = firebase.performance();
+export const perf = performance(app);
 
-export default perf;
+export const analytics = initAnalytics(app);

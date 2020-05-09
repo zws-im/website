@@ -4,6 +4,7 @@ import { reset, update } from "../chart";
 import { apexCharts, elements, hostnames } from "../constants";
 import load from "../util/loadUntilPromiseSettled";
 import validateURL from "../util/validateURL";
+import { analytics } from "../util/firebase";
 
 export default (event: Event) => {
   event.preventDefault();
@@ -36,8 +37,7 @@ export default (event: Event) => {
   load(elements.submitButtons.stats, request);
 
   try {
-    // eslint-disable-next-line camelcase
-    gtag("event", "checkStats", { event_category: "URLs" });
+    analytics.logEvent("checkStats");
   } catch (error) {
     console.error("Unable to log URL stats event to Google Analytics");
   }
