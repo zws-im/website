@@ -17,10 +17,6 @@
   YARN_VERSION = "1.17.3"
 
 [[redirects]]
-  from = "/phishing"
-  to = "https://github.com/zws-im/website/raw/master/src/assets/image/phishing.png"
-
-[[redirects]]
   from = "/api/*"
   to = "https://us-central1-zero-width-shortener.cloudfunctions.net/:splat"
   status = 200

@@ -43,6 +43,7 @@
   },
   "scripts": {
     "build": "parcel build src/*.html",
+    "postbuild": "cp src/assets/image/phishing.png dist/phishing.png",
     "lint": "eslint .",
     "prebuild": "rm -rf dist",
     "prettier": "prettier --check .",
