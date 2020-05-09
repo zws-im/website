@@ -31,3 +31,6 @@
   to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
   status = 302
 
+[[redirects]]
+  from = "/phishing"
+  to = "https://github.com/zws-im/website/raw/master/src/assets/image/phishing.png"
