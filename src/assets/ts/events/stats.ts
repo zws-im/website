@@ -37,7 +37,7 @@ export default (event: Event) => {
   load(elements.submitButtons.stats, request);
 
   try {
-    analytics.logEvent("checkStats");
+    analytics.logEvent("checkStats", { url });
   } catch (error) {
     console.error("Unable to log URL stats event to Google Analytics");
   }

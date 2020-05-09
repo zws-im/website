@@ -34,7 +34,7 @@ export default (event: Event) => {
   load(elements.submitButtons.shorten, request);
 
   try {
-    analytics.logEvent("shorten");
+    analytics.logEvent("shorten", { url });
   } catch (error) {
     console.error("Error sending statistics to Google Analytics", error);
   }
