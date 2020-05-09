@@ -1,4 +1,4 @@
-import { analytics as initAnalytics, apps, initializeApp, performance } from "firebase/app";
+import { analytics as initAnalytics, apps, initializeApp, performance } from "firebase";
 import { firebaseConfig } from "../constants";
 
 // Initialize Firebase
