@@ -32,7 +32,7 @@ export const elements = {
   chart: document.getElementById("chart") as HTMLDivElement,
   copyButton: document.getElementById("copy") as HTMLButtonElement,
 };
-export const apexCharts = {
+export const apexCharts: Chart = {
   chart: undefined,
   options: {
     chart: {
@@ -49,7 +49,7 @@ export const apexCharts = {
       type: "datetime",
     },
   },
-} as Chart;
+};
 /**
  * DSN used to log errors to Sentry.
  */
