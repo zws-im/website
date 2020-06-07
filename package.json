@@ -9,7 +9,7 @@
   "dependencies": {
     "@sentry/browser": "5.16.1",
     "apexcharts": "3.19.2",
-    "bulma": "0.8.2",
+    "bulma": "0.9.0",
     "clipboard": "2.0.6",
     "firebase": "7.15.0"
   },
