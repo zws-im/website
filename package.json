@@ -7,7 +7,7 @@
     "url": "https://github.com/zws-im/website/issues"
   },
   "dependencies": {
-    "@sentry/browser": "5.17.0",
+    "@sentry/browser": "5.18.0",
     "apexcharts": "3.19.2",
     "bulma": "0.9.0",
     "clipboard": "2.0.6",
