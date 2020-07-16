@@ -26,7 +26,7 @@
     "parcel": "1.12.4",
     "prettier": "2.0.5",
     "sass": "1.26.10",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   },
   "keywords": [
     "url shortener",
