@@ -2,7 +2,7 @@ import shortenURL from "../api/shortenURL";
 import { elements, hostnames } from "../constants";
 import load from "../util/loadUntilPromiseSettled";
 import validateURL from "../util/validateURL";
-import { analytics } from "../util/firebase";
+import { analytics } from "firebase";
 
 export default (event: Event) => {
   event.preventDefault();
@@ -34,7 +34,7 @@ export default (event: Event) => {
   load(elements.submitButtons.shorten, request);
 
   try {
-    analytics.logEvent("shorten", { url });
+    analytics().logEvent("shorten", { url });
   } catch (error) {
     console.error("Error sending statistics to Google Analytics", error);
   }
