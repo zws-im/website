@@ -1,0 +1,14 @@
+@import '../typography/Text.module.scss';
+
+.form {
+	border-radius: 3px;
+	background-color: white;
+}
+
+.input {
+}
+
+.button {
+	font-weight: bold;
+	color: $text-alternate;
+}

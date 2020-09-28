@@ -1,0 +1,26 @@
+@import './variables';
+
+@font-face {
+	font-family: 'Liberation Sans';
+	font-weight: normal;
+	src: url('/font/LiberationSans-Regular.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Liberation Sans';
+	font-weight: bold;
+	src: url('/font/LiberationSans-Bold.ttf') format('ttf');
+}
+
+html {
+	min-height: 100vh;
+}
+
+body {
+	height: 100%;
+	background: $body-bg;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	font-family: 'Liberation Sans', sans-serif;
+}

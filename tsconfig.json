@@ -1,24 +1,19 @@
 {
-  "compilerOptions": {
-    // Path to output directory
-    "outDir": "./dist/",
-    // Allow sourcemap support
-    "sourceMap": true,
-    // Enable strict null checks as a best practice
-    "strictNullChecks": true,
-    // Specify module code generation
-    "module": "es2015",
-    // Specify ECMAScript target version
-    "target": "es2019",
-    // Allow a partial TypeScript and JavaScript codebase
-    "allowJs": true,
-    "checkJs": true,
-    // Required for a funny Firebase module error
-    "moduleResolution": "node",
-    // The Firebase module will make TypeScript mad otherwise
-    "allowSyntheticDefaultImports": true,
-    // Used for loading version number
-    "resolveJsonModule": true
-  },
-  "include": ["src/assets/ts", "src/types", "@sentry/types"]
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": false,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve"
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"exclude": ["node_modules"]
 }

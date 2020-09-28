@@ -1,0 +1,19 @@
+$text-primary: rgba(255, 255, 255, 1);
+$text-secondary: rgba(248, 245, 255, 1);
+$text-tertiary: rgba(220, 213, 240, 1);
+
+$text-alternate: rgba(68, 19, 203, 1);
+
+.heading {
+	color: $text-primary;
+	font-weight: 700;
+}
+
+.text {
+	color: $text-secondary;
+	font-weight: 400;
+}
+
+.small {
+	color: $text-tertiary;
+}

@@ -1,0 +1,14 @@
+@import './Text.module.scss';
+@import '../../styles/variables.scss';
+
+.clickableText {
+	cursor: pointer;
+	font-family: monospace;
+
+	transition: all $transition-duration-tiny linear $transition-duration-none;
+	border-bottom: 1px solid transparent;
+
+	&:hover {
+		border-color: $text-primary;
+	}
+}
