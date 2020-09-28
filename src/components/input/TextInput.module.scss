@@ -1,14 +1,20 @@
 @import '../typography/Text.module.scss';
 
 .form {
-	border-radius: 3px;
 	background-color: white;
 }
 
 .input {
+	border-radius: 3px;
+	border-color: white;
+	border-style: solid;
+	height: 2em;
+	min-width: 100%;
+	outline: 0;
 }
 
 .button {
 	font-weight: bold;
 	color: $text-alternate;
+	height: 100%;
 }

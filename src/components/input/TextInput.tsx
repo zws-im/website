@@ -1,5 +1,5 @@
 import React, {ButtonHTMLAttributes, FC, FormHTMLAttributes, InputHTMLAttributes} from 'react';
-import styles from './Input.module.scss';
+import styles from './TextInput.module.scss';
 
 export interface Props extends FormHTMLAttributes<HTMLFormElement> {
 	inputProps?: InputHTMLAttributes<HTMLInputElement>;
@@ -11,7 +11,7 @@ export const TextInput: FC<Props> = ({buttonProps, inputProps, ...props}) => {
 		<form className={styles.form} {...props}>
 			<input className={styles.input} {...inputProps} />
 			<button className={styles.button} type='submit' {...buttonProps}>
-				Submit
+				{props.children ?? 'Submit'}
 			</button>
 		</form>
 	);

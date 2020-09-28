@@ -1,0 +1,8 @@
+@import '../styles/variables.scss';
+
+.divider {
+	border-width: 2px;
+	border-style: solid;
+  color: $accent;
+  width: 10%;
+}

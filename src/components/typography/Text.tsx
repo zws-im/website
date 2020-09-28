@@ -19,9 +19,9 @@ interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
 	as: 'span';
 }
 
-export type Props = SetOptional<HeadingProps | ParagraphProps | SmallProps | SpanProps>;
+export type Props = SetOptional<HeadingProps | ParagraphProps | SmallProps | SpanProps> & {centered?: boolean};
 
-export const Text: FC<Props> = ({className: previousClassName, as: variant = 'p', ...props}) => {
+export const Text: FC<Props> = ({className: previousClassName, as: variant = 'p', centered, ...props}) => {
 	let className: string;
 
 	switch (variant) {
@@ -42,7 +42,7 @@ export const Text: FC<Props> = ({className: previousClassName, as: variant = 'p'
 	}
 
 	return createElement(variant, {
-		className: clsx(previousClassName, className),
+		className: clsx(previousClassName, className, {[styles.centered]: centered}),
 		...props
 	});
 };

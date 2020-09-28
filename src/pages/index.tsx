@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React, {FC, useState} from 'react';
 import {Contributor} from '../components/Contributor';
 import {Faq} from '../components/Faq';
+import {Hr} from '../components/Hr';
 import {TextInput} from '../components/input/TextInput';
 import {Nav} from '../components/Nav';
 import {Anchor} from '../components/typography/Anchor';
@@ -48,8 +49,10 @@ const Shorten = () => {
 
 const FrequentlyAskedQuestions = () => (
 	<section id={SectionIds.Faq}>
-		<Text as='h2'>Frequently Asked Questions</Text>
-		<hr />
+		<Text as='h2' centered>
+			Frequently Asked Questions
+		</Text>
+		<Hr />
 		{/*
       TODO: Should this be refactored to use children elements, something like:
       <Faq>        
