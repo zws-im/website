@@ -8,26 +8,29 @@ export const navItems: NavItem[] = [
 	{
 		key: 'stats',
 		to: (
-			<Link passHref href='/'>
+			<Link key="stats" passHref href='/'>
 				<Anchor>Stats</Anchor>
 			</Link>
 		)
 	},
 	{
-		key: 'stats',
+		key: 'questions',
 		to: (
-			<Link passHref href={`/#${HomeSectionIds.Faq}`}>
+			<Link key="questions" passHref href={`/#${HomeSectionIds.Faq}`}>
 				<Anchor>Questions</Anchor>
 			</Link>
 		)
 	},
 	{
-		key: 'stats',
+		key: 'docs',
 		to: (
-			<Link passHref href='/'>
+			<Link key="docs" passHref href='/'>
 				<Anchor>Docs</Anchor>
 			</Link>
 		)
 	},
-	{key: 'stats', to: <Anchor href='https://github.com/zws-im?utm_source=zws.im'>GitHub</Anchor>}
+	{
+		key: 'github',
+		to: <Anchor key="github" href='https://github.com/zws-im?utm_source=zws.im'>GitHub</Anchor>,
+	},
 ];
