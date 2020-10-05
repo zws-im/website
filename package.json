@@ -11,7 +11,7 @@
     "apexcharts": "3.22.0",
     "bulma": "0.9.1",
     "clipboard": "2.0.6",
-    "firebase": "7.22.0"
+    "firebase": "7.22.1"
   },
   "devDependencies": {
     "@dice-discord/eslint-config": "3.0.0",
