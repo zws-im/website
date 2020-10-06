@@ -6,13 +6,11 @@ export interface Props extends FormHTMLAttributes<HTMLFormElement> {
 	buttonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
-export const TextInput: FC<Props> = ({buttonProps, inputProps, ...props}) => {
-	return (
-		<form className={styles.form} {...props}>
-			<input className={styles.input} {...inputProps} />
-			<button className={styles.button} type='submit' {...buttonProps}>
-				{props.children ?? 'Submit'}
-			</button>
-		</form>
-	);
-};
+export const TextInput: FC<Props> = ({buttonProps, inputProps, ...props}) => (
+	<form className={styles.form} {...props}>
+		<input className={styles.input} {...inputProps} />
+		<button className={styles.button} type='submit' {...buttonProps}>
+			{props.children ?? 'Submit'}
+		</button>
+	</form>
+);

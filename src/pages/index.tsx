@@ -11,13 +11,18 @@ import {RandomizedText} from '../components/typography/RandomizedText';
 import {Text} from '../components/typography/Text';
 import {navItems} from '../nav';
 import {Home as SectionIds} from '../sectionIds';
+import styles from './index.module.scss';
 
 const Header = () => (
-	<header>
+	<header className={styles.header}>
 		<Nav>{navItems}</Nav>
 
-		<Text as='small'>The</Text>
-		<Text as='h1'>Zero Width Shortener</Text>
+		<Text as='small' className={styles.the}>
+			The
+		</Text>
+		<Text as='h1' className={styles.zeroWidthShortener}>
+			Zero Width Shortener
+		</Text>
 	</header>
 );
 
@@ -49,16 +54,16 @@ const Shorten = () => {
 
 const FrequentlyAskedQuestions = () => (
 	<section id={SectionIds.Faq}>
-		<Text as='h2' centered>
+		<Text centered as='h2'>
 			Frequently Asked Questions
 		</Text>
 		<Hr />
 		{/*
       TODO: Should this be refactored to use children elements, something like:
       <Faq>        
-        <FaqItem title='Title 1'>Description 1</FaqItem>
-        <FaqItem title='Title 2'>Description 2</FaqItem>
-        <FaqItem title='Title 3'>Description 3</FaqItem>
+        <Faq.Item title='Title 1'>Description 1</FaqItem>
+        <Faq.Item title='Title 2'>Description 2</FaqItem>
+        <Faq.Item title='Title 3'>Description 3</FaqItem>
       </Faq>        
   */}
 		<Faq
@@ -114,20 +119,18 @@ const Footer = () => (
 	</footer>
 );
 
-const Home: FC = () => {
-	return (
-		<>
-			<Header />
+const Home: FC = () => (
+	<>
+		<Header />
 
-			<Shorten />
+		<Shorten />
 
-			<FrequentlyAskedQuestions />
+		<FrequentlyAskedQuestions />
 
-			<AboutUs />
+		<AboutUs />
 
-			<Footer />
-		</>
-	);
-};
+		<Footer />
+	</>
+);
 
 export default Home;

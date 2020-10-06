@@ -1,5 +1,23 @@
+@import '../styles/variables.scss';
+
 .nav {
+	display: flex;
+	margin: 0px 64px 0px 64px;
 }
 
-.item {
+.logo {
+	height: 30px;
+	margin-top: 30px;
+}
+
+.links {
+	margin-left: auto;
+
+	a {
+		font-size: 15px;
+		margin: 36px 0px 36px 46px;
+		font-weight: bold;
+		color: $text-secondary;
+		display: inline-block;
+	}
 }
