@@ -3,16 +3,13 @@ import React, {FC, HTMLAttributes, ReactChild} from 'react';
 import styles from './Nav.module.scss';
 import {Anchor} from './typography/Anchor';
 
-export interface Item {
-	key: string;
-	to: ReactChild;
-}
+export type Item = ReactChild;
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
 	children: Item[];
 }
 
-export const Nav: FC<Props> = ({children, ...props}) => {
+export const Nav: FC<Props> = props => {
 	return (
 		<nav className={styles.nav}>
 			<Link passHref href='/'>
@@ -20,9 +17,7 @@ export const Nav: FC<Props> = ({children, ...props}) => {
 					<img className={styles.logo} src='/images/logo.png' />
 				</Anchor>
 			</Link>
-			<div className={styles.links} {...props}>
-				{children.map(item => item.to)}
-			</div>
+			<div className={styles.links} {...props} />
 		</nav>
 	);
 };
