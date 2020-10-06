@@ -4,10 +4,10 @@ import randomizedTextStyles from './RandomizedText.module.scss';
 import {Props as TextProps, Text} from './Text';
 import textStyles from './Text.module.scss';
 
-function generateRandomText() {
+function generateRandomText(length: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 = 6) {
 	return Math.random()
 		.toString(26 + 10)
-		.slice(2, 8);
+		.slice(2, length + 2);
 }
 
 const initialRandomText = 'xyga7z';
@@ -21,7 +21,7 @@ export const RandomizedText: FC<Props> = props => {
 	const [randomizedText, setRandomizedText] = useState(initialRandomText);
 
 	return (
-		<Text as='span' className={clsx(textStyles.text, randomizedTextStyles.clickableText)} onClick={() => setRandomizedText(generateRandomText())} {...props}>
+		<Text as='span' className={clsx(textStyles.text, randomizedTextStyles.clickableText)} onClick={() => setRandomizedText(generateRandomText(6))} {...props}>
 			{randomizedText}
 		</Text>
 	);
