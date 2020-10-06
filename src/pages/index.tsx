@@ -17,8 +17,12 @@ const Header = () => (
 	<header className={styles.header}>
 		<Nav>{navItems}</Nav>
 
-		<Text as='small' className={styles.the}>The</Text>
-		<Text as='h1' className={styles.zeroWidthShortener}>Zero Width Shortener</Text>
+		<Text as='small' className={styles.the}>
+			The
+		</Text>
+		<Text as='h1' className={styles.zeroWidthShortener}>
+			Zero Width Shortener
+		</Text>
 	</header>
 );
 
