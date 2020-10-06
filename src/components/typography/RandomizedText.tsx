@@ -4,7 +4,7 @@ import randomizedTextStyles from './RandomizedText.module.scss';
 import {Props as TextProps, Text} from './Text';
 import textStyles from './Text.module.scss';
 
-function generateRandomText(length: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 = 6) {
+function generateRandomText(length: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 = 6): string {
 	return Math.random()
 		.toString(26 + 10)
 		.slice(2, length + 2);
