@@ -61,9 +61,9 @@ const FrequentlyAskedQuestions = () => (
 		{/*
       TODO: Should this be refactored to use children elements, something like:
       <Faq>        
-        <FaqItem title='Title 1'>Description 1</FaqItem>
-        <FaqItem title='Title 2'>Description 2</FaqItem>
-        <FaqItem title='Title 3'>Description 3</FaqItem>
+        <Faq.Item title='Title 1'>Description 1</FaqItem>
+        <Faq.Item title='Title 2'>Description 2</FaqItem>
+        <Faq.Item title='Title 3'>Description 3</FaqItem>
       </Faq>        
   */}
 		<Faq
