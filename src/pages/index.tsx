@@ -119,20 +119,18 @@ const Footer = () => (
 	</footer>
 );
 
-const Home: FC = () => {
-	return (
-		<>
-			<Header />
+const Home: FC = () => (
+	<>
+		<Header />
 
-			<Shorten />
+		<Shorten />
 
-			<FrequentlyAskedQuestions />
+		<FrequentlyAskedQuestions />
 
-			<AboutUs />
+		<AboutUs />
 
-			<Footer />
-		</>
-	);
-};
+		<Footer />
+	</>
+);
 
 export default Home;

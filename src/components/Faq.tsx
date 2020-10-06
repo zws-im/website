@@ -10,16 +10,14 @@ export interface Props extends HTMLAttributes<HTMLUListElement> {
 	}>;
 }
 
-export const Faq: FC<Props> = ({faq, ...props}) => {
-	return (
-		<ul className={styles.faq} {...props}>
-			{faq.map(question => (
-				<li key={question.key} className={styles.item}>
-					<Text as='h3'>{question.title}</Text>
+export const Faq: FC<Props> = ({faq, ...props}) => (
+	<ul className={styles.faq} {...props}>
+		{faq.map(question => (
+			<li key={question.key} className={styles.item}>
+				<Text as='h3'>{question.title}</Text>
 
-					<Text>{question.body}</Text>
-				</li>
-			))}
-		</ul>
-	);
-};
+				<Text>{question.body}</Text>
+			</li>
+		))}
+	</ul>
+);

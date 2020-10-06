@@ -9,15 +9,13 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 	children: Item[];
 }
 
-export const Nav: FC<Props> = props => {
-	return (
-		<nav className={styles.nav}>
-			<Link passHref href='/'>
-				<Anchor>
-					<img className={styles.logo} src='/images/logo.png' />
-				</Anchor>
-			</Link>
-			<div className={styles.links} {...props} />
-		</nav>
-	);
-};
+export const Nav: FC<Props> = props => (
+	<nav className={styles.nav}>
+		<Link passHref href='/'>
+			<Anchor>
+				<img className={styles.logo} src='/images/logo.png' />
+			</Anchor>
+		</Link>
+		<div className={styles.links} {...props} />
+	</nav>
+);
