@@ -5,5 +5,5 @@ import styles from './Anchor.module.scss';
 export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 export const Anchor: FC<Props> = React.forwardRef(({className, ...props}, ref: MutableRefObject<HTMLAnchorElement>) => (
-	<a className={clsx(className, styles.link)} ref={ref} {...props} />
+	<a ref={ref} className={clsx(className, styles.link)} {...props} />
 ));

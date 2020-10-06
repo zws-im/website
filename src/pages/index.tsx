@@ -54,7 +54,7 @@ const Shorten = () => {
 
 const FrequentlyAskedQuestions = () => (
 	<section id={SectionIds.Faq}>
-		<Text as='h2' centered>
+		<Text centered as='h2'>
 			Frequently Asked Questions
 		</Text>
 		<Hr />
