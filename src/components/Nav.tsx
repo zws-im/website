@@ -8,7 +8,7 @@ export interface Item {
 	to: ReactChild;
 }
 
-export interface Props extends HTMLAttributes<HTMLUListElement> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
 	children: Item[];
 }
 
