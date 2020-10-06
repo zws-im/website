@@ -1,0 +1,14 @@
+@import '../styles/variables';
+
+.the {
+	color: $primary;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.zeroWidthShortener {
+	margin-top: 4px;
+	color: $text-primary;
+	font-size: 42px;
+	font-weight: bold;
+}
