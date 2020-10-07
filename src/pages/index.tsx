@@ -45,6 +45,7 @@ const Shorten = () => {
 				buttonProps={{children: 'Shorten'}}
 				onSubmit={event => {
 					event.preventDefault();
+					console.log({longUrl});
 					alert(longUrl);
 				}}
 			/>
