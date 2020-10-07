@@ -17,10 +17,10 @@ const Header = () => (
 	<header className={styles.header}>
 		<Nav>{navItems}</Nav>
 
-		<Text as='small' className={styles.the}>
+		<Text as='small' className={styles.caption}>
 			The
 		</Text>
-		<Text as='h1' className={styles.zeroWidthShortener}>
+		<Text as='h1' className={styles.heading}>
 			Zero Width Shortener
 		</Text>
 	</header>
@@ -60,11 +60,11 @@ const FrequentlyAskedQuestions = () => (
 		<Hr />
 		{/*
       TODO: Should this be refactored to use children elements, something like:
-      <Faq>        
+      <Faq>
         <Faq.Item title='Title 1'>Description 1</FaqItem>
         <Faq.Item title='Title 2'>Description 2</FaqItem>
         <Faq.Item title='Title 3'>Description 3</FaqItem>
-      </Faq>        
+      </Faq>
   */}
 		<Faq
 			faq={[
