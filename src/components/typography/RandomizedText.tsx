@@ -21,7 +21,7 @@ export const RandomizedText: FC<Props> = props => {
 	const [randomizedText, setRandomizedText] = useState(initialRandomText);
 
 	return (
-		<Text as='span' className={clsx(textStyles.text, randomizedTextStyles.clickableText)} onClick={() => setRandomizedText(generateRandomText(6))} {...props}>
+		<Text as='span' className={clsx(textStyles.text, randomizedTextStyles['clickable-text'])} onClick={() => setRandomizedText(generateRandomText(6))} {...props}>
 			{randomizedText}
 		</Text>
 	);

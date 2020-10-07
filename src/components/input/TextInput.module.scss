@@ -1,12 +1,12 @@
-@import '../typography/Text.module.scss';
+@import '../typography/Text.module';
 
 .form {
-	background-color: white;
+	background-color: #fff;
 }
 
 .input {
 	border-radius: 3px;
-	border-color: white;
+	border-color: #fff;
 	border-style: solid;
 	height: 2em;
 	min-width: 100%;

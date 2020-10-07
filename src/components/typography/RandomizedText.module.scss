@@ -1,7 +1,7 @@
-@import './Text.module.scss';
-@import '../../styles/variables.scss';
+@import './Text.module';
+@import '../../styles/variables';
 
-.clickableText {
+.clickable-text {
 	cursor: pointer;
 	font-family: monospace;
 	transition: all $transition-duration-tiny linear $transition-duration-none;

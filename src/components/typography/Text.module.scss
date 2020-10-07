@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 
 $text-primary: rgba(255, 255, 255, 1);
 $text-secondary: rgba(248, 245, 255, 1);
@@ -8,12 +8,12 @@ $text-alternate: rgba(68, 19, 203, 1);
 
 .heading {
 	color: $text-primary;
-	font-weight: 700;
+	font-weight: bold;
 }
 
 .text {
 	color: $text-secondary;
-	font-weight: 400;
+	font-weight: normal;
 }
 
 .small {
