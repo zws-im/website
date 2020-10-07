@@ -42,7 +42,7 @@ export const Text: FC<Props> = ({className: previousClassName, as: variant = 'p'
 	}
 
 	return createElement(variant, {
-		className: clsx(previousClassName, className, {[styles.centered]: centered}),
+		className: clsx(previousClassName, {[styles.centered]: centered}, className),
 		...props
 	});
 };

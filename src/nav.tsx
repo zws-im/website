@@ -6,15 +6,15 @@ import React from 'react';
 
 export const navItems: NavItem[] = [
 	<Link key='stats' passHref href='/'>
-		<Anchor>Stats</Anchor>
+		<Anchor variant='nav'>Stats</Anchor>
 	</Link>,
 	<Link key='questions' passHref href={`/#${HomeSectionIds.Faq}`}>
-		<Anchor>Questions</Anchor>
+		<Anchor variant='nav'>Questions</Anchor>
 	</Link>,
 	<Link key='docs' passHref href='/'>
-		<Anchor>Docs</Anchor>
+		<Anchor variant='nav'>Docs</Anchor>
 	</Link>,
-	<Anchor key='github' href='https://github.com/zws-im?utm_source=zws.im'>
+	<Anchor key='github' variant='nav' href='https://github.com/zws-im?utm_source=zws.im'>
 		GitHub
 	</Anchor>
 ];
