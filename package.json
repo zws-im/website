@@ -17,6 +17,8 @@
 		"eslint-plugin-react-hooks": "^4.1.2",
 		"prettier": "2.0.4",
 		"prettier-config-xo": "^1.0.3",
+		"stylelint": "^13.7.2",
+		"stylelint-config-xo-scss": "^0.13.0",
 		"type-fest": "^0.16.0",
 		"typescript": "3.9.7",
 		"xo": "^0.33.1"
@@ -28,6 +30,7 @@
 		"dev": "next dev",
 		"export": "next export",
 		"lint": "xo",
+		"stylelint": "stylelint \"src/**/*.scss\"",
 		"start": "next start",
 		"style": "prettier --ignore-path .gitignore --check ."
 	},
