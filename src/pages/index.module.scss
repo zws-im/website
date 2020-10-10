@@ -1,9 +1,15 @@
 @import '../styles/variables';
 
-.caption {
-	color: $primary;
-	font-size: 22px;
-	font-weight: bold;
+.title {
+	padding-left: 25%;
+
+	.caption {
+		color: $primary;
+		font-size: 22px;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 10%;
+	}
 }
 
 .heading {
@@ -11,4 +17,14 @@
 	color: $text-primary;
 	font-size: 42px;
 	font-weight: bold;
+	// padding-left: 10%;
+	text-align: center;
+}
+
+.content {
+	padding: 10%;
+}
+
+.about-us-text {
+	width: 75%;
 }

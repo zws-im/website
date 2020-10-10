@@ -1,12 +1,12 @@
-import {faGithub} from '@fortawesome/free-brands-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React, {FC, useState} from 'react';
+import {AllContributors} from '../components/AllContributors';
 import {Contributor} from '../components/Contributor';
 import {Faq} from '../components/Faq';
 import {Hr} from '../components/Hr';
 import {TextInput} from '../components/input/TextInput';
 import {Nav} from '../components/Nav';
-import {Anchor} from '../components/typography/Anchor';
+import {Anchor, Props as AnchorProps} from '../components/typography/Anchor';
+import {Footer} from '../components/typography/Footer';
 import {RandomizedText} from '../components/typography/RandomizedText';
 import {Text} from '../components/typography/Text';
 import {navItems} from '../nav';
@@ -14,12 +14,14 @@ import {Home as SectionIds} from '../sectionIds';
 import styles from './index.module.scss';
 
 const Header = () => (
-	<header className={styles.header}>
+	<header>
 		<Nav>{navItems}</Nav>
 
-		<Text as='small' className={styles.caption}>
-			The
-		</Text>
+		<div className={styles.title}>
+			<Text as='small' className={styles.caption}>
+				The
+			</Text>
+		</div>
 		<Text as='h1' className={styles.heading}>
 			Zero Width Shortener
 		</Text>
@@ -30,7 +32,7 @@ const Shorten = () => {
 	const [longUrl, setLongUrl] = useState<string>();
 
 	return (
-		<main id={SectionIds.Shorten}>
+		<main id={SectionIds.Shorten} className={styles.content}>
 			<Text>
 				Shorten your URLs with invisible spaces today. There's no more need for ugly <RandomizedText /> endings.
 			</Text>
@@ -54,7 +56,7 @@ const Shorten = () => {
 };
 
 const FrequentlyAskedQuestions = () => (
-	<section id={SectionIds.Faq}>
+	<section id={SectionIds.Faq} className={styles.content}>
 		<Text centered as='h2'>
 			Frequently Asked Questions
 		</Text>
@@ -82,42 +84,34 @@ const FrequentlyAskedQuestions = () => (
 );
 
 const AboutUs = () => (
-	<section id={SectionIds.AboutUs}>
-		<Text as='h2'>About us</Text>
+	<section id={SectionIds.AboutUs} className={styles.content}>
+		<div className={styles['about-us-text']}>
+			<Text as='h2'>About us</Text>
 
-		<Text>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum nunc aliquet bibendum
-			enim facilisis gravida neque convallis. Adipiscing at in tellus integer feugiat. Ultrices tincidunt arcu non sodales neque sodales. Quisque sagittis purus
-			sit amet volutpat consequat mauris nunc. A pellentesque sit amet porttitor eget dolor. Tempor orci dapibus ultrices in iaculis nunc. At auctor urna nunc
-			id cursus metus aliquam.
-		</Text>
+			<Text>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum nunc aliquet bibendum
+				enim facilisis gravida neque convallis. Adipiscing at in tellus integer feugiat. Ultrices tincidunt arcu non sodales neque sodales. Quisque sagittis
+				purus sit amet volutpat consequat mauris nunc. A pellentesque sit amet porttitor eget dolor. Tempor orci dapibus ultrices in iaculis nunc. At auctor
+				urna nunc id cursus metus aliquam.
+			</Text>
+		</div>
 
-		<aside>
-			<Anchor href='https://jonah.pw/?utm_source=zws.im'>
-				<Contributor width={128} height={128} src='https://avatars3.githubusercontent.com/u/7608555?s=128' alt='A fox made out of a pepperoni pizza' />
-			</Anchor>
-			<Anchor href='https://overcoder.dev/?utm_source=zws.im'>
-				<Contributor
-					width={128}
-					height={128}
-					src='https://avatars3.githubusercontent.com/u/8523135?s=128'
-					alt='Poorly scribbled white text on a black background saying "Overcoder"'
-				/>
-			</Anchor>
-			<Anchor href='https://opencollective.com/zws#section-contributors'>
-				<FontAwesomeIcon icon={faGithub} size='8x' />
-				and other contributors
-			</Anchor>
-		</aside>
+		<AllContributors>
+			{(props: AnchorProps) => (
+				<Anchor href='https://jonah.pw/?utm_source=zws.im' {...props}>
+					<Contributor src='https://avatars3.githubusercontent.com/u/7608555?s=256' alt='A fox made out of a pepperoni pizza' />
+				</Anchor>
+			)}
+			{(props: AnchorProps) => (
+				<Anchor href='https://overcoder.dev/?utm_source=zws.im' {...props}>
+					<Contributor
+						src='https://avatars3.githubusercontent.com/u/8523135?s=256'
+						alt='Poorly scribbled white text on a black background saying "Overcoder"'
+					/>
+				</Anchor>
+			)}
+		</AllContributors>
 	</section>
-);
-
-const Footer = () => (
-	<footer id={SectionIds.Footer}>
-		<Text>
-			ZWS and zws.im are licensed under the <Anchor href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0 license</Anchor>{' '}
-		</Text>
-	</footer>
 );
 
 const Home: FC = () => (
@@ -130,7 +124,11 @@ const Home: FC = () => (
 
 		<AboutUs />
 
-		<Footer />
+		<Footer id={SectionIds.Footer}>
+			<Text>
+				ZWS and zws.im are licensed under the <Anchor href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0 license</Anchor>{' '}
+			</Text>
+		</Footer>
 	</>
 );
 
