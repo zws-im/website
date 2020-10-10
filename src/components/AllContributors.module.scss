@@ -1,0 +1,45 @@
+.all-contributors {
+	display: grid;
+	height: 20%;
+	width: 20%;
+	// float: right;
+	// margin-right: 10%;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 24px 24px;
+	grid-template-areas:
+		'a      b'
+		'github github';
+}
+
+.a {
+	grid-area: a;
+}
+
+.b {
+	grid-area: b;
+}
+
+.github {
+	grid-area: github;
+	background-color: #301b66;
+}
+
+.anchor {
+	color: #b69ef6;
+	text-align: center;
+	text-decoration: none;
+}
+
+.child {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.child-item {
+	margin: 12px;
+}
