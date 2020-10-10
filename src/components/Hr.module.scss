@@ -1,8 +1,8 @@
 @import '../styles/variables';
 
 .divider {
-	border-width: 2px;
-	border-style: solid;
-	color: $accent;
-	width: 10%;
+	border: none;
+	height: 2px;
+	background-color: $accent;
+	width: 5%;
 }
