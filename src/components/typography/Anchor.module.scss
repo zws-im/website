@@ -3,7 +3,7 @@
 $link-color: rgba(155, 119, 255, 1);
 
 .base {
-	text-decoration: none;
+	// Add styles to be applied to all Anchors here
 }
 
 .link {
@@ -11,6 +11,7 @@ $link-color: rgba(155, 119, 255, 1);
 }
 
 .nav {
+	text-decoration: none;
 	font-size: 15px;
 	margin: 36px 0 36px 46px;
 	font-weight: bold;
