@@ -2556,7 +2556,7 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@rollup/plugin-babel@^5.2.0", "@rollup/plugin-babel@^5.2.1":
+"@rollup/plugin-babel@^5.2.0":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.2.1.tgz#20fc8f8864dc0eaa1c5578408459606808f72924"
   integrity sha512-Jd7oqFR2dzZJ3NWANDyBjwTtX/lYbZpVcmkHrfQcpvawHs9E4c0nYk5U2mfZ6I/DZcIvy506KZJi54XK/jxH7A==
@@ -3162,12 +3162,11 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@3.22.2:
-  version "3.22.2"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.22.2.tgz#7656a54e4a69479e0737c05defcd542c8cc162c5"
-  integrity sha512-pR+cmApk7dhfYILBpe8RVb+FdLfVCt/RDWvAJO1F5feeSQ8lKDgFkRuVu9KOeEarHVXjUpnhLqHNMx7YaprK8A==
+apexcharts@3.22.3:
+  version "3.22.3"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.22.3.tgz#a829c4500db8478069b80e227741830b77d89467"
+  integrity sha512-ZRZWmAmSdyc+tFhHMZ10ZxbvSbomWe46izpi8yQj5cKLxuujw2XeXVQ0jxnPl9yE5Q7W2hAbDWStaouBN4mSuw==
   dependencies:
-    "@rollup/plugin-babel" "^5.2.1"
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
     svg.filter.js "^2.0.2"
