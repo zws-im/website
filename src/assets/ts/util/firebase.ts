@@ -4,7 +4,7 @@ import "firebase/analytics";
 import { firebaseConfig } from "../constants";
 
 // Initialize Firebase
-export const app = firebase.apps.length === 0 ? firebase.initializeApp(firebaseConfig) : firebase.apps[0];
+export const app = firebase.apps?.length === 0 ? firebase.initializeApp(firebaseConfig) : firebase.apps[0];
 
 import "firebase/performance";
 
