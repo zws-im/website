@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@sentry/browser": "5.29.2",
-    "apexcharts": "3.23.0",
+    "apexcharts": "3.23.1",
     "bulma": "0.9.1",
     "clipboard": "2.0.6",
     "firebase": "8.2.1"
