@@ -1,10 +1,17 @@
+import firebase from "firebase/app";
 import { Stats } from "../../../types/stats";
 import getURLStats from "../api/getURLStats";
 import { reset, update } from "../chart";
 import { apexCharts, elements, hostnames } from "../constants";
+import { app } from "../util/firebase";
 import load from "../util/loadUntilPromiseSettled";
 import validateURL from "../util/validateURL";
-import { analytics } from "firebase";
+
+let analytics: firebase.analytics.Analytics | null = null;
+
+firebase.analytics.isSupported().then(() => {
+  analytics = firebase.analytics(app);
+});
 
 export default (event: Event) => {
   event.preventDefault();
@@ -37,7 +44,7 @@ export default (event: Event) => {
   load(elements.submitButtons.stats, request);
 
   try {
-    analytics().logEvent("checkStats", { url });
+    analytics?.logEvent("checkStats", { url });
   } catch (error) {
     console.error("Unable to log URL stats event to Google Analytics");
   }

@@ -1,4 +1,4 @@
 export interface Chart {
   chart?: ApexCharts;
-  options: Object;
+  options: Record<string, unknown>;
 }

@@ -13,7 +13,7 @@ if (self.workbox) {
 
   self.Sentry.addBreadcrumb({
     category: "sw.workbox.load",
-    message: `Workbox is loaded`,
+    message: "Workbox is loaded",
     level: self.Sentry.Severity.Info,
   });
 
@@ -21,9 +21,7 @@ if (self.workbox) {
 
   // Cache API requests
   self.workbox.routing.registerRoute(
-    ({ event }) => {
-      return (new URL(event.request.url).pathname || "").startsWith("/api");
-    },
+    ({ event }) => (new URL(event.request.url).pathname || "").startsWith("/api"),
     new self.workbox.strategies.NetworkFirst({
       cacheName: "api-requests",
       plugins: [
@@ -107,7 +105,7 @@ if (self.workbox) {
 } else {
   self.Sentry.addBreadcrumb({
     category: "sw.workbox.load",
-    message: `Workbox didn't load`,
+    message: "Workbox didn't load",
     level: self.Sentry.Severity.Error,
   });
   console.error("Workbox didn't load");

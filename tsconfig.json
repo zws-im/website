@@ -7,9 +7,10 @@
     // Enable strict null checks as a best practice
     "strictNullChecks": true,
     // Specify module code generation
-    "module": "es2015",
+    "module": "esnext",
     // Specify ECMAScript target version
-    "target": "es2019",
+    "target": "es2015",
+    "strict": true,
     // Allow a partial TypeScript and JavaScript codebase
     "allowJs": true,
     "checkJs": true,

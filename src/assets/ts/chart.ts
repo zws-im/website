@@ -6,7 +6,9 @@ import Usage from "../../types/usage";
  * @param value Value of the entry
  * @param index The index of the entry in the set of all entries
  */
-const generateAreaChart = (value: any, index: number): [any, number] => [value, index + 1];
+function generateAreaChart<T>(value: T, index: number): [T, number] {
+  return [value, index + 1];
+}
 
 /**
  * Update the data in a chart.
