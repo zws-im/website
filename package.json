@@ -4,7 +4,7 @@
 		"@fortawesome/free-brands-svg-icons": "^5.14.0",
 		"@fortawesome/react-fontawesome": "^0.1.11",
 		"clsx": "^1.1.1",
-		"next": "9.5.3",
+		"next": "10.0.6",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
 		"sass": "^1.26.11"
