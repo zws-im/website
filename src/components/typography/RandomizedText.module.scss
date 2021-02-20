@@ -1,11 +1,10 @@
-@import './Text.module';
 @import '../../styles/variables';
 
 .clickable-text {
 	cursor: pointer;
-	font-family: monospace;
 	transition: all $transition-duration-tiny linear $transition-duration-none;
 	border-bottom: 1px solid transparent;
+	user-select: none;
 
 	&:hover {
 		border-color: $text-primary;

@@ -1,20 +1,51 @@
-import {Item as NavItem} from './components/Nav';
+import {Button, makeStyles, Typography, withStyles} from '@material-ui/core';
 import Link from 'next/link';
+// import {Anchor} from './components/typography/Anchor';
+import React, {FC, ReactChild} from 'react';
 import {Home as HomeSectionIds} from './sectionIds';
-import {Anchor} from './components/typography/Anchor';
-import React from 'react';
 
-export const navItems: NavItem[] = [
-	<Link key='stats' passHref href='/'>
-		<Anchor variant='nav'>Stats</Anchor>
-	</Link>,
-	<Link key='questions' passHref href={`/#${HomeSectionIds.Faq}`}>
-		<Anchor variant='nav'>Questions</Anchor>
-	</Link>,
-	<Link key='docs' passHref href='/'>
-		<Anchor variant='nav'>Docs</Anchor>
-	</Link>,
-	<Anchor key='github' variant='nav' href='https://github.com/zws-im?utm_source=zws.im'>
-		GitHub
-	</Anchor>
-];
+const NavButton = withStyles({
+	root: {
+		boxShadow: 'none',
+		textTransform: 'none'
+		// paddingLeft: '35px',
+		// paddingRight: '35px'
+	}
+})(Button);
+
+const useStyles = makeStyles(theme => ({
+	button: {
+		paddingLeft: theme.spacing(2),
+		paddingRight: theme.spacing(2)
+	}
+}));
+
+export const NavItems: FC = () => {
+	const classes = useStyles();
+
+	return (
+		<>
+			<Link key='questions' passHref href={`/#${HomeSectionIds.Faq}`}>
+				<NavButton disableRipple className={classes.button}>
+					<Typography variant='h4' component='span'>
+						Questions
+					</Typography>
+				</NavButton>
+			</Link>
+
+			<Link key='docs' passHref href='/'>
+				<NavButton disableRipple className={classes.button}>
+					<Typography variant='h4' component='span'>
+						Docs
+					</Typography>
+				</NavButton>
+			</Link>
+
+			<NavButton disableRipple className={classes.button} key='github' href='https://github.com/zws-im?utm_source=zws.im'>
+				<Typography variant='h4' component='span'>
+					GitHub
+				</Typography>
+			</NavButton>
+		</>
+	);
+};

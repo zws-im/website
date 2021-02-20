@@ -1,31 +1,20 @@
+import {Box, Typography} from '@material-ui/core';
 import React, {FC, useState} from 'react';
-import {AllContributors} from '../components/AllContributors';
-import {Contributor} from '../components/Contributor';
 import {Faq} from '../components/Faq';
 import {Hr} from '../components/Hr';
 import {TextInput} from '../components/input/TextInput';
-import {Nav} from '../components/Nav';
-import {Anchor, Props as AnchorProps} from '../components/typography/Anchor';
-import {Footer} from '../components/typography/Footer';
 import {RandomizedText} from '../components/typography/RandomizedText';
-import {Text} from '../components/typography/Text';
-import {navItems} from '../nav';
 import {Home as SectionIds} from '../sectionIds';
 import styles from './index.module.scss';
 
 const Header = () => (
-	<header>
-		<Nav>{navItems}</Nav>
+	<>
+		<Typography variant='h1'>Zero Width Shortener</Typography>
 
-		<div className={styles.title}>
-			<Text as='small' className={styles.caption}>
-				The
-			</Text>
-		</div>
-		<Text as='h1' className={styles.heading}>
-			Zero Width Shortener
-		</Text>
-	</header>
+		<Typography variant='body2'>
+			Shorten your URLs using invisible characters instead of ugly endings like <RandomizedText />.
+		</Typography>
+	</>
 );
 
 const Shorten = () => {
@@ -33,9 +22,6 @@ const Shorten = () => {
 
 	return (
 		<main id={SectionIds.Shorten} className={styles.content}>
-			<Text>
-				Shorten your URLs with invisible spaces today. There's no more need for ugly <RandomizedText /> endings.
-			</Text>
 			<TextInput
 				inputProps={{
 					placeholder: 'https://en.wikipedia.org/wiki/Galactic_algorithm',
@@ -56,18 +42,16 @@ const Shorten = () => {
 };
 
 const FrequentlyAskedQuestions = () => (
-	<section id={SectionIds.Faq} className={styles.content}>
-		<Text centered as='h2'>
-			Frequently Asked Questions
-		</Text>
+	<Box id={SectionIds.Faq} marginY={4}>
+		<Typography variant='h2'>Frequently Asked Questions</Typography>
 		<Hr />
 		{/*
       TODO: Should this be refactored to use children elements, something like:
-      <Faq>
-        <Faq.Item title='Title 1'>Description 1</FaqItem>
-        <Faq.Item title='Title 2'>Description 2</FaqItem>
-        <Faq.Item title='Title 3'>Description 3</FaqItem>
-      </Faq>
+      <Faq.Faq>
+        <Faq.Item title='Title 1'>Description 1</Faq.Item>
+        <Faq.Item title='Title 2'>Description 2</Faq.Item>
+        <Faq.Item title='Title 3'>Description 3</Faq.Item>
+      </Faq.Faq>
   */}
 		<Faq
 			faq={[
@@ -80,23 +64,23 @@ const FrequentlyAskedQuestions = () => (
 				{key: 'brokenChatService', title: 'Why doesnt zws work on [chat service]?', body: 'broken chat service haha '.repeat(10).trim()}
 			]}
 		/>
-	</section>
+	</Box>
 );
 
 const AboutUs = () => (
-	<section id={SectionIds.AboutUs} className={styles.content}>
+	<Box id={SectionIds.AboutUs} marginY={4}>
 		<div className={styles['about-us-text']}>
-			<Text as='h2'>About us</Text>
+			<Typography variant='h2'>About us</Typography>
 
-			<Text>
+			<Typography>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum nunc aliquet bibendum
 				enim facilisis gravida neque convallis. Adipiscing at in tellus integer feugiat. Ultrices tincidunt arcu non sodales neque sodales. Quisque sagittis
 				purus sit amet volutpat consequat mauris nunc. A pellentesque sit amet porttitor eget dolor. Tempor orci dapibus ultrices in iaculis nunc. At auctor
 				urna nunc id cursus metus aliquam.
-			</Text>
+			</Typography>
 		</div>
 
-		<AllContributors>
+		{/* <AllContributors>
 			{(props: AnchorProps) => (
 				<Anchor href='https://jonah.pw/?utm_source=zws.im' {...props}>
 					<Contributor src='https://avatars3.githubusercontent.com/u/7608555?s=256' alt='A fox made out of a pepperoni pizza' />
@@ -110,25 +94,21 @@ const AboutUs = () => (
 					/>
 				</Anchor>
 			)}
-		</AllContributors>
-	</section>
+		</AllContributors> */}
+	</Box>
 );
 
 const Home: FC = () => (
 	<>
-		<Header />
+		<div className={styles.header}>
+			<Header />
 
-		<Shorten />
+			<Shorten />
+		</div>
 
 		<FrequentlyAskedQuestions />
 
 		<AboutUs />
-
-		<Footer id={SectionIds.Footer}>
-			<Text>
-				ZWS and zws.im are licensed under the <Anchor href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0 license</Anchor>{' '}
-			</Text>
-		</Footer>
 	</>
 );
 

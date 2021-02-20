@@ -1,20 +1,50 @@
-@import '../typography/Text.module';
+@import '../../styles/variables';
 
 .form {
-	background-color: #fff;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.wrapper {
+	width: 100%;
 }
 
 .input {
-	border-radius: 3px;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+
+	box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+	max-width: 100%;
+	width: 100%;
+
+	background-color: #fff;
 	border-color: #fff;
-	border-style: solid;
-	height: 2em;
-	min-width: 100%;
-	outline: 0;
+
+	border: 0px solid transparent;
+	border-radius: 4px 0 0 4px;
+	display: inline-flex;
+	justify-content: flex-start;
+	padding: 0.75em;
+
+	outline: none;
 }
 
 .button {
 	font-weight: bold;
-	color: $text-alternate;
+	background-color: #fff;
+	border-color: #dbdbdb;
+	border-width: 1px;
+	border: 1px solid transparent;
+	border-radius: 0 4px 4px 0;
+	outline: none;
 	height: 100%;
+
+	transition: all $transition-duration-short ease-out;
+
+	&:hover {
+		background-color: lighten($accent, 25);
+	}
+	&:focus {
+		background-color: lighten($accent, 20);
+	}
 }

@@ -12,15 +12,10 @@
 	src: url('/font/LiberationSans-Bold.ttf') format('ttf');
 }
 
-html {
-	min-height: 100vh;
-}
-
 body {
-	height: 100%;
 	background: $body-bg;
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
-	font-family: 'Liberation Sans', sans-serif;
+	// font-family: 'Liberation Sans', sans-serif;
 }

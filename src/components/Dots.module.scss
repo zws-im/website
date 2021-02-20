@@ -1,0 +1,9 @@
+@import '../styles/variables';
+
+.dots {
+	@media (max-width: 960px) {
+		display: none;
+	}
+
+	fill: $accent;
+}

@@ -1,6 +1,6 @@
-import React, {FC, HTMLAttributes} from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import styles from './Faq.module.scss';
-import {Text} from './typography/Text';
+import {Typography} from '@material-ui/core';
 
 export interface Props extends HTMLAttributes<HTMLUListElement> {
 	faq: Array<{
@@ -14,9 +14,9 @@ export const Faq: FC<Props> = ({faq, ...props}) => (
 	<ul className={styles.faq} {...props}>
 		{faq.map(question => (
 			<li key={question.key} className={styles.item}>
-				<Text as='h3'>{question.title}</Text>
+				<Typography variant='h3'>{question.title}</Typography>
 
-				<Text>{question.body}</Text>
+				<Typography>{question.body}</Typography>
 			</li>
 		))}
 	</ul>
