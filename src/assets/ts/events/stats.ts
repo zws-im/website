@@ -19,20 +19,24 @@ export default (event: Event) => {
   const { value: url } = elements.inputs.stats;
   const result = elements.outputs.stats;
 
+  result.innerText = "";
+
   if (!validateURL(url)) {
     return (result.innerText = "Invalid URL");
   }
 
-  if (hostnames.includes(new URL(url).hostname)) {
-    return (result.innerText =
-      "Shortening a URL containing the URL shortener's hostname is disallowed so there won't be any results");
+  const parsed = new URL(url);
+
+  if (!hostnames.includes(parsed.hostname)) {
+    result.innerText = "You need to enter a shortened URL";
+    return;
   }
 
   if (!navigator.onLine) {
     return (result.innerText = "You are offline");
   }
 
-  const request = getURLStats(url);
+  const request = getURLStats(parsed.pathname.slice(1));
 
   window.Sentry.addBreadcrumb({
     category: "urls.stats",
@@ -54,17 +58,12 @@ export default (event: Event) => {
       const stats: Stats = await response.json();
 
       if (apexCharts.chart) {
-        update(apexCharts.chart, {
-          get: stats.usage ? stats.usage.get : [],
-          shorten: stats.usage ? stats.usage.shorten : [],
-        });
+        update(apexCharts.chart, stats);
       } else {
         throw new Error("Could not find chart");
       }
 
-      return (result.innerText = `Shortened ${(stats.shorten || 0).toLocaleString()} times and visited ${(
-        stats.get || 0
-      ).toLocaleString()} times.`);
+      return;
     } else {
       if (apexCharts.chart) {
         reset(apexCharts.chart);
@@ -73,7 +72,7 @@ export default (event: Event) => {
       }
 
       if (response.status === 404) {
-        return (result.innerText = "That URL couldn't be found or you don't have access to it");
+        return (result.innerText = "That URL couldn't be found");
       } else {
         console.error(response);
         return (result.innerText = `An error occurred: ${response.status}`);

@@ -1,5 +1,5 @@
 import ApexCharts from "apexcharts";
-import Usage from "../../types/usage";
+import { Stats } from "../../types/stats";
 
 /**
  * Generates data in the ApexCharts format for an area chart.
@@ -13,22 +13,16 @@ function generateAreaChart<T>(value: T, index: number): [T, number] {
 /**
  * Update the data in a chart.
  */
-export const update = (chart: ApexCharts, data: Usage) =>
+export const update = (chart: ApexCharts, data: Stats) => {
   chart.updateSeries([
-    {
-      name: "Shortened",
-      data: data.shorten.map(generateAreaChart),
-    },
-    { name: "Visited", data: data.get.map(generateAreaChart) },
+    { name: "Visited", data: data.visits.map((visit) => new Date(visit).getTime()).map(generateAreaChart) },
   ]);
+};
 
 /**
  * Clear the data from a chart.
  * @param chart Chart to clear the date for
  */
 export const reset = (chart: ApexCharts) => {
-  chart.updateSeries([
-    { name: "Shortened", data: [] },
-    { name: "Visited", data: [] },
-  ]);
+  chart.updateSeries([{ name: "Visited", data: [] }]);
 };

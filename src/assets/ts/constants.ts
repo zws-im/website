@@ -3,7 +3,7 @@ import { Chart } from "../../types/chart";
 /**
  * Base API URL to use for requests.
  */
-export const apiURL = "https://zws.im/api";
+export const apiURL = "https://api.zws.im";
 /**
  * Hostnames of ZWS instances.
  * Used in addition to server-side validation to prevent shortening an already short URL.

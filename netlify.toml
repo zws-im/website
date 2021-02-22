@@ -18,15 +18,10 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/:splat"
+  to = "https://api.zws.im/:splat"
   status = 200
 
 [[redirects]]
-  from = "/*/stats"
-  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURLStats/:splat"
-  status = 302
-
-[[redirects]]
   from = "/*"
-  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
+  to = "https://api.zws.im/:splat"
   status = 302
