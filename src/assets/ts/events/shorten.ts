@@ -31,10 +31,10 @@ export default (event: Event) => {
 
   const request = shortenURL(url);
 
-  window.Sentry.addBreadcrumb({
+  window.Sentry?.addBreadcrumb({
     category: "urls.shorten",
     message: `Shortenened URL ${url}`,
-    level: window.Sentry.Severity.Info,
+    level: window.Sentry?.Severity.Info,
   });
 
   // Make the button load until the request is finished

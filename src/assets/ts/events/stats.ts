@@ -38,10 +38,10 @@ export default (event: Event) => {
 
   const request = getURLStats(parsed.pathname.slice(1));
 
-  window.Sentry.addBreadcrumb({
+  window.Sentry?.addBreadcrumb({
     category: "urls.stats",
     message: `Check statistics of URL ${url}`,
-    level: window.Sentry.Severity.Info,
+    level: window.Sentry?.Severity.Info,
   });
 
   // Make the button load until the request is finished
