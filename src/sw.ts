@@ -26,7 +26,7 @@ if (self.workbox) {
       cacheName: "api-requests",
       plugins: [
         new self.workbox.expiration.Plugin({
-          maxAgeSeconds: maxAgeSeconds,
+          maxAgeSeconds: 60,
         }),
       ],
     })
