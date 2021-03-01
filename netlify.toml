@@ -24,7 +24,7 @@
 [[redirects]]
   from = "/status"
   to = "https://status.zws.im/"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/*"
