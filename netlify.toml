@@ -22,6 +22,11 @@
   status = 200
 
 [[redirects]]
+  from = "/status"
+  to = "https://status.zws.im/"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "https://api.zws.im/:splat"
   status = 302
