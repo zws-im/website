@@ -29,4 +29,4 @@
 [[redirects]]
   from = "/*"
   to = "https://api.zws.im/:splat"
-  status = 302
+  status = 200
