@@ -1648,10 +1648,10 @@
   dependencies:
     "@firebase/app-types" "0.6.2"
 
-"@firebase/database@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.9.9.tgz#dcbeb1e921227dbe78f9eddb191f85c1205e9822"
-  integrity sha512-WdiMjxGLDpcISgcbeq4KV/osJMP+52lczDRG/RPZ/O26mTghrpJuZm/r+l2usLl3txmiNyAIIRkDzWwWkwh+Xg==
+"@firebase/database@0.9.10":
+  version "0.9.10"
+  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.9.10.tgz#bc1f26b26ad1f5cdb8b0ec88aff08f03e65cb992"
+  integrity sha512-QvKhWpsBK4T1L4iGOpTBRvw4s2nqEtD6qja+L116BejFFJZik+U+cVe3xLKoeyGy2YtbcS28ly0h285pmnYwRw==
   dependencies:
     "@firebase/auth-interop-types" "0.1.5"
     "@firebase/component" "0.4.1"
@@ -6504,16 +6504,16 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-firebase@8.4.0:
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-8.4.0.tgz#0fd1ef2726edffdbb40c85065947f171ec665110"
-  integrity sha512-tgQAeIjdq+CEm+46Lz9qyJ7wojTKoj3l8ulNYFRiTw7R2K4gZjrkzXyBT9akbKhLpEBHfwd2bXR2CA07ku5dwg==
+firebase@8.4.1:
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-8.4.1.tgz#2e1794157e7548c11cd42a086c476f603fc8b66e"
+  integrity sha512-PMDt9iU8ry5P7PSrGQ+72O1gkfa5rNAeybMZhP22nKOh40sVozSkcKGZAFumXog7tjlslHJhUEZgfZbKCNkC8Q==
   dependencies:
     "@firebase/analytics" "0.6.9"
     "@firebase/app" "0.6.20"
     "@firebase/app-types" "0.6.2"
     "@firebase/auth" "0.16.4"
-    "@firebase/database" "0.9.9"
+    "@firebase/database" "0.9.10"
     "@firebase/firestore" "2.2.4"
     "@firebase/functions" "0.6.7"
     "@firebase/installations" "0.4.25"
