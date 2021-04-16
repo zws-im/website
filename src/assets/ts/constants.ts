@@ -8,7 +8,7 @@ export const apiURL = "https://api.zws.im";
  * Hostnames of ZWS instances.
  * Used in addition to server-side validation to prevent shortening an already short URL.
  */
-export const hostnames = ["zws.im", "zws.jonahsnider.ninja"];
+export const hostnames = ["zws.im"];
 /**
  * HTML elements used across the project.
  */
