@@ -30,3 +30,9 @@
   from = "/*"
   to = "https://api.zws.im/:splat"
   status = 200
+
+# Disable FLoC tracking https://plausible.io/blog/google-floc#how-to-opt-out-of-floc-as-a-web-developer-set-a-permissions-policy
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
