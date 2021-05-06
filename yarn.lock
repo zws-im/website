@@ -1953,34 +1953,6 @@
     validate-npm-package-name "^3.0.0"
     yargs "^15.3.0"
 
-"@netlify/config@^6.4.3":
-  version "6.4.3"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-6.4.3.tgz#2a38979cec08b0ede268dd799810664b5fa4e4da"
-  integrity sha512-91GdJfbBNNixUjzyScgIesCPT7yMlwqelh5f0z1KJk02wm86BZZwYQl3CrghTX6AoCiu2lryVLrBo8HHG7G9Rw==
-  dependencies:
-    "@ungap/from-entries" "^0.2.1"
-    array-flat-polyfill "^1.0.1"
-    chalk "^3.0.0"
-    deepmerge "^4.2.2"
-    execa "^3.4.0"
-    fast-safe-stringify "^2.0.7"
-    figures "^3.2.0"
-    filter-obj "^2.0.1"
-    find-up "^4.1.0"
-    indent-string "^4.0.0"
-    is-plain-obj "^2.1.0"
-    js-yaml "^4.0.0"
-    map-obj "^4.0.0"
-    netlify "^6.1.26"
-    omit.js "^2.0.2"
-    p-locate "^4.1.0"
-    path-exists "^4.0.0"
-    path-type "^4.0.0"
-    toml "^3.0.0"
-    tomlify-j0.4 "^3.0.0"
-    validate-npm-package-name "^3.0.0"
-    yargs "^15.3.0"
-
 "@netlify/config@^6.4.4":
   version "6.4.4"
   resolved "https://registry.yarnpkg.com/@netlify/config/-/config-6.4.4.tgz#9453624316ada4ea7cc88c24e51d5fea0504b5de"
@@ -9071,10 +9043,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@3.26.3:
-  version "3.26.3"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.26.3.tgz#601e9848b07e48f02eece11f538806289efc8460"
-  integrity sha512-370olO45maEmIShVoADrbRAos8FaoS4JHk+C6RNFLBJCkQuA3uANFC1B/PEkAUxYuOpoqW0jfbxkbwn7zGqXTA==
+netlify-cli@3.26.4:
+  version "3.26.4"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.26.4.tgz#a53d03ced7d21e3acb40eaae5f6003e6f89d9b15"
+  integrity sha512-OdYDo7Qh5gyQLViqV+qnjdsJObxdL+5qIxZW2VC7cw6YibWjFtxtF5n0dQWo5oJzpsfarKTs9+78/cv5C9Xa4g==
   dependencies:
     "@netlify/build" "^11.9.1"
     "@netlify/config" "^6.4.4"
@@ -9145,7 +9117,7 @@ netlify-cli@3.26.3:
     minimist "^1.2.5"
     multiparty "^4.2.1"
     netlify "^6.1.27"
-    netlify-redirect-parser "^3.0.24"
+    netlify-redirect-parser "^3.0.25"
     netlify-redirector "^0.2.1"
     node-fetch "^2.6.0"
     node-version-alias "^1.0.1"
@@ -9178,12 +9150,12 @@ netlify-cli@3.26.3:
     wrap-ansi "^7.0.0"
     write-file-atomic "^3.0.0"
 
-netlify-redirect-parser@^3.0.24:
-  version "3.0.24"
-  resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-3.0.24.tgz#fd466c647028239aeeaff79d35e0a0d6dcc358ce"
-  integrity sha512-Q8olghIEW2gIoleKGOrtKUmfehmZ6JG8PUWNzrYf8qMbEADYba5+RsKL5eHdBckvuc77oRUjkcXupSjQcdLF5A==
+netlify-redirect-parser@^3.0.25:
+  version "3.0.25"
+  resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-3.0.25.tgz#0475b9448c321fb7bc4391a421827759b9bf2842"
+  integrity sha512-ivFh0gdZgPUnLUm8xipbBLiTvNw5jVWDVQfWiuHb999fYSHYNVSsxGSuNQZa9CkyLhNJ4Ow9HHwok3ETFlrBZw==
   dependencies:
-    "@netlify/config" "^6.4.3"
+    "@netlify/config" "^6.4.4"
     lodash.isplainobject "^4.0.6"
 
 netlify-redirector@^0.2.1:
@@ -9198,33 +9170,6 @@ netlify@^6.1.18:
   dependencies:
     "@netlify/open-api" "^1.3.0"
     "@netlify/zip-it-and-ship-it" "^3.3.0"
-    backoff "^2.5.0"
-    clean-deep "^3.4.0"
-    flush-write-stream "^2.0.0"
-    folder-walker "^3.2.0"
-    from2-array "0.0.4"
-    hasha "^5.2.2"
-    lodash.camelcase "^4.3.0"
-    micro-api-client "^3.3.0"
-    node-fetch "^2.6.1"
-    omit.js "^2.0.2"
-    p-map "^3.0.0"
-    p-wait-for "^3.2.0"
-    parallel-transform "^1.2.0"
-    pump "^3.0.0"
-    qs "^6.9.6"
-    rimraf "^3.0.2"
-    tempy "^0.3.0"
-    through2-filter "^3.0.0"
-    through2-map "^3.0.0"
-
-netlify@^6.1.26:
-  version "6.1.26"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-6.1.26.tgz#ac23837e53213412eddcf84f50a31dc9b99331b2"
-  integrity sha512-qbuvsX1f+zTzmyK7HEHzr556bSwq85vX7OgMA2CNjG0XVcizCO3y0G1GYwYXnkNBcpVO6VdCOVfnSVpaxTJxVA==
-  dependencies:
-    "@netlify/open-api" "^2.4.0"
-    "@netlify/zip-it-and-ship-it" "^3.9.1"
     backoff "^2.5.0"
     clean-deep "^3.4.0"
     flush-write-stream "^2.0.0"
