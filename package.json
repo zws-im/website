@@ -25,7 +25,7 @@
     "netlify-cli": "3.37.25",
     "parcel": "1.12.4",
     "prettier": "2.3.1",
-    "sass": "1.34.1",
+    "sass": "1.35.0",
     "typescript": "4.3.2"
   },
   "keywords": [
