@@ -22,7 +22,7 @@
     "eslint": "8.3.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
-    "netlify-cli": "8.0.16",
+    "netlify-cli": "8.0.19",
     "parcel": "1.12.4",
     "prettier": "2.5.1",
     "sass": "1.44.0",
