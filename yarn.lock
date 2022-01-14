@@ -1929,17 +1929,17 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^26.1.1":
-  version "26.1.1"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.1.1.tgz#b4e3d2738d834a736bd1b8c4fa4e58dbd6b8f229"
-  integrity sha512-bFVNUXElPPkKOMn3/d4mxmsaxpe4QJC376yuXqZIhKMn37JCDPAfE2sBkFgMK9TjsWNqYKfsIhUtUnjFB6y2gA==
+"@netlify/build@^26.1.3":
+  version "26.1.3"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.1.3.tgz#136a85c93e83b3f3b41e2c6787cdbb6b787fa2e2"
+  integrity sha512-DmuMkdIT5whw90vN4NV9RtBK+yh6sM2/mXalIQyT0XSGKhr77SjY3ZHgzE8JE0BHAklMN+xphQLTjvESk+L4Ng==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^4.0.0"
     "@netlify/config" "^17.0.0"
     "@netlify/functions-utils" "^4.0.0"
     "@netlify/git-utils" "^4.0.0"
-    "@netlify/plugin-edge-handlers" "^3.0.2"
+    "@netlify/plugin-edge-handlers" "^3.0.3"
     "@netlify/plugins-list" "^6.2.1"
     "@netlify/run-utils" "^4.0.0"
     "@netlify/zip-it-and-ship-it" "^5.4.0"
@@ -2069,10 +2069,10 @@
   resolved "https://registry.yarnpkg.com/@netlify/esbuild/-/esbuild-0.13.6.tgz#ef0fda98604e708528ef0a57e853c50a6fc987f2"
   integrity sha512-tiKmDcHM2riSVN79c0mJY/67EBDafXQAMitHuLiCDAMdtz3kfv+NqdVG5krgf5lWR8Uf8AeZrUW5Q9RP25REvw==
 
-"@netlify/framework-info@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@netlify/framework-info/-/framework-info-8.0.0.tgz#f12121606db6a7e119c724d4d861828aa9207ab4"
-  integrity sha512-8kU0+1civXPehsOcHY9DzAAFWmovkPQFt4W+Z2J86MojER5BXk6PTXhEHNcmgPSYoTejcA7vQ0nAPFErzt5gkA==
+"@netlify/framework-info@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@netlify/framework-info/-/framework-info-8.0.1.tgz#2f10baf4017ad39f2c90dc90a3724aa3e797d2a3"
+  integrity sha512-fEvnNMPTFrjHui43UVsljopAmkB4TdY3ewtL1oKhBeiIW+QjN9EexrmkosFJznjLPb/SzS9i3hkd24ae1lVPEg==
   dependencies:
     ajv "^8.0.0"
     filter-obj "^2.0.1"
@@ -2204,6 +2204,27 @@
     "@rollup/plugin-json" "^4.1.0"
     "@rollup/plugin-node-resolve" "^11.0.0"
     "@types/node" "^16.0.0"
+    buffer-es6 "^4.9.3"
+    del "^6.0.0"
+    node-fetch "^2.6.1"
+    path-type "^4.0.0"
+    process-es6 "^0.11.6"
+    rollup "^2.23.1"
+    rollup-plugin-node-polyfills "^0.2.1"
+    rollup-plugin-terser "^7.0.2"
+
+"@netlify/plugin-edge-handlers@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-edge-handlers/-/plugin-edge-handlers-3.0.3.tgz#5244be82bbbd2a0b1216e4753f1866379498863c"
+  integrity sha512-Yj862RtTGXDgKEKJzfL9FNlonpxTGSVDEeRyt/Kpp7gKoW5z1Vr6h1T1Ymq7GKuFqFeGT6IKaxG6aJt24/rbTw==
+  dependencies:
+    "@babel/core" "^7.11.4"
+    "@babel/preset-env" "^7.11.5"
+    "@rollup/plugin-babel" "^5.2.0"
+    "@rollup/plugin-commonjs" "^21.0.0"
+    "@rollup/plugin-inject" "^4.0.2"
+    "@rollup/plugin-json" "^4.1.0"
+    "@rollup/plugin-node-resolve" "^11.0.0"
     buffer-es6 "^4.9.3"
     del "^6.0.0"
     node-fetch "^2.6.1"
@@ -8997,14 +9018,14 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@8.6.23:
-  version "8.6.23"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-8.6.23.tgz#cb00ea07ec2bae495a3ae3c8924db01c6673c291"
-  integrity sha512-xiYpatBU2UKwITk7hv8ifZXvF4pi1u2urkWX+6Bl08kYuvvoM0CqkzIKbA0XYdE7L2ES+d0a45KX0pajRq1myA==
+netlify-cli@8.8.1:
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-8.8.1.tgz#0b9437fa105d93ef6aeedc78fb92c3debfae62b2"
+  integrity sha512-JoXDYuVEqlFbnxLGRRGIfmIuck0uQIc4yPRM7X9HvqqCgywSEhG6XLwDn8Gz9ri6MtTDsc6/BIV2dBT2n0epwA==
   dependencies:
-    "@netlify/build" "^26.1.1"
+    "@netlify/build" "^26.1.3"
     "@netlify/config" "^17.0.3"
-    "@netlify/framework-info" "^8.0.0"
+    "@netlify/framework-info" "^8.0.1"
     "@netlify/local-functions-proxy" "^1.1.1"
     "@netlify/plugin-edge-handlers" "^3.0.2"
     "@netlify/plugins-list" "^6.2.1"
