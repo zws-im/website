@@ -21,7 +21,7 @@
     "cssnano": "4.1.11",
     "eslint": "8.18.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.1.0",
+    "eslint-plugin-prettier": "4.2.1",
     "netlify-cli": "10.3.3",
     "parcel": "1.12.4",
     "prettier": "2.7.1",
