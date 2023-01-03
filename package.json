@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "parcel build src/*.html",
-    "postbuild": "cp src/assets/image/phishing.png src/keybase.txt dist",
+    "postbuild": "cp src/assets/image/phishing.png src/keybase.txt src/_redirects dist",
     "lint": "eslint .",
     "prebuild": "rm -rf dist",
     "prettier": "prettier --check .",
