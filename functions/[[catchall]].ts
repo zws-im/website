@@ -34,39 +34,31 @@ const SHORT_CHARS: readonly string[] = [
   "\udb40\udc79",
   "\udb40\udc7a",
   "\udb40\udc7f",
-  "oomf",
+  "test",
 ];
 
 const SHORTENED_URL_REGEXP = new RegExp(`/(?:${SHORT_CHARS.join("|")})+$`, "g");
 
-function getRedirectUrl(request: Request): string | Request {
-  const path = new URL(request.url).pathname;
+function getRedirect(context: EventContext<Env, string, unknown>): string | Request {
+  const path = context.functionPath;
 
   if (path.startsWith("/api")) {
-    console.log("[i] redirecting", path, "to the API");
     const redirectUrl = new URL(REDIRECT_URL_BASE);
     redirectUrl.pathname = path.slice("/api".length);
-    return redirectUrl.toString();
+
+    return new Request(redirectUrl, context.request);
   }
 
   SHORTENED_URL_REGEXP.lastIndex = 0;
 
-  if (SHORTENED_URL_REGEXP.test(path)) {
-    console.log("[i] redirecting", path, "to a shortened URL");
+  if (context.request.method.toLowerCase() === "get" && SHORTENED_URL_REGEXP.test(path)) {
     const redirectUrl = new URL(REDIRECT_URL_BASE);
     redirectUrl.pathname = path;
-    const yay = redirectUrl.toString();
-    console.log({ yay });
-    return yay;
+
+    return redirectUrl.toString();
   }
 
-  console.log("[i] redirecting", path, "to NOWHERE");
-
-  return request;
+  return context.request;
 }
 
-export const onRequest: PagesFunction = async (context) => {
-  console.log("context params:", context.params);
-  console.log("url:", context.request.url);
-  return fetch(getRedirectUrl(context.request));
-};
+export const onRequest: PagesFunction<Env> = async (context) => fetch(getRedirect(context));
