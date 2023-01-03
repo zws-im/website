@@ -1,0 +1,3 @@
+/status https://status.zws.im/ 301
+/api/* https://api.zws.im/:splat 200
+/* https://api.zws.im/:splat 200
