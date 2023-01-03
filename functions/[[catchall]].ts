@@ -1,15 +1,5 @@
 /* eslint-disable require-await */
 
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `wrangler dev src/workers/index.ts` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `wrangler publish src/index.ts --name my-worker` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
-
 export type Env = Record<never, never>;
 
 const REDIRECT_URL_BASE = "https://api.zws.im";
@@ -65,15 +55,7 @@ function getRedirectUrl(request: Request): string | Request {
     return redirectUrl.toString();
   }
 
-  console.log("it's over");
-
   return request;
 }
 
-async function handler(request: Request): Promise<Response> {
-  return fetch(getRedirectUrl(request));
-}
-
-export default {
-  fetch: handler,
-};
+export const onRequest: PagesFunction = async (context) => fetch(getRedirectUrl(context.request));

@@ -23,5 +23,5 @@
 
     "types": ["@cloudflare/workers-types"]
   },
-  "include": ["src/assets/ts", "src/types", "@sentry/types"]
+  "include": ["src/assets/ts", "src/types", "@sentry/types", "functions"]
 }
