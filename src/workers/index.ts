@@ -44,7 +44,6 @@ const SHORT_CHARS: readonly string[] = [
   "\udb40\udc79",
   "\udb40\udc7a",
   "\udb40\udc7f",
-  "oomf",
 ];
 
 const SHORTENED_URL_REGEXP = new RegExp(`/(?:${SHORT_CHARS.join("|")})+$`, "g");
