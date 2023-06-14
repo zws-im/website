@@ -16,8 +16,8 @@
   "devDependencies": {
     "@dice-discord/eslint-config": "3.0.0",
     "@types/clipboard": "2.0.1",
-    "@typescript-eslint/eslint-plugin": "5.59.9",
-    "@typescript-eslint/parser": "5.59.9",
+    "@typescript-eslint/eslint-plugin": "5.59.11",
+    "@typescript-eslint/parser": "5.59.11",
     "cssnano": "4.1.11",
     "eslint": "8.42.0",
     "eslint-config-prettier": "8.8.0",
