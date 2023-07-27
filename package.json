@@ -20,7 +20,7 @@
     "@typescript-eslint/parser": "5.62.0",
     "cssnano": "4.1.11",
     "eslint": "8.45.0",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "8.9.0",
     "eslint-plugin-prettier": "4.2.1",
     "netlify-cli": "12.14.0",
     "parcel": "1.12.4",
